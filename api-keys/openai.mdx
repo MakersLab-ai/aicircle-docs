@@ -1,0 +1,73 @@
+---
+title: "API-Key von OpenAI"
+description: "So bekommst du einen API-Schlüssel für GPT-Modelle auf platform.openai.com."
+icon: "key"
+---
+
+<span className="label">api keys</span>
+
+Mit einem OpenAI-API-Key kann dein Agent die GPT-Modelle nutzen (z. B. GPT-5.4, GPT-Mini). Du brauchst dafür einen OpenAI-Account und ein aufgeladenes Guthaben. OpenAI ist unsere **Standard-Empfehlung** für den Einstieg.
+
+<Warning>
+  **Setze auf jeden Fall ein Limit für den Token-Verbrauch!** Bevor du deinen
+  Key in das Anmeldeformular einträgst, hinterlege bei OpenAI unter
+  **Settings → Limits** ein monatliches Ausgabenlimit (z. B. 100 € oder
+  200 €). So kann nichts versehentlich aus dem Ruder laufen. Wie das geht,
+  steht weiter unten in Schritt 6.
+</Warning>
+
+<Info>
+  OpenAI trennt **ChatGPT-Abo** und **API-Zugang**. Auch wenn du ChatGPT Plus hast, brauchst du für die API ein separates, vorausbezahltes Guthaben.
+</Info>
+
+## Schritt für Schritt
+
+<Steps>
+  <Step title="OpenAI Platform öffnen">
+    Gehe zu [platform.openai.com](https://platform.openai.com) und melde dich an. Falls du noch keinen Account hast, registriere dich (E-Mail oder Google/Microsoft/Apple).
+  </Step>
+  <Step title="Zu den API-Keys wechseln">
+    Klicke oben rechts auf dein Profil → **View API keys**. Oder direkt: [platform.openai.com/api-keys](https://platform.openai.com/api-keys).
+  </Step>
+  <Step title="Neuen Key erstellen">
+    Klicke auf **Create new secret key**. Gib einen Namen ein (z. B. `ai-circle`) und bestätige.
+  </Step>
+  <Step title="Key kopieren und sicher ablegen">
+    Der Key wird dir **nur einmal** angezeigt — kopiere ihn sofort in deinen Passwort-Manager.
+
+    <Warning>
+      Der Key fängt mit `sk-...` an. Behandle ihn wie ein Passwort — niemals weitergeben, nicht öffentlich posten.
+    </Warning>
+  </Step>
+  <Step title="Guthaben aufladen">
+    Gehe zu **Settings → Billing** und lade ein Startguthaben auf (Minimum meist 5 USD). Ohne Guthaben funktioniert der Key nicht.
+  </Step>
+  <Step title="Limit für den Verbrauch setzen — Pflicht!">
+    Wechsle zu **Settings → Limits** und setze ein **monatliches Ausgabenlimit** (`Set a monthly budget`). Empfehlung: in derselben Größenordnung wie dein Guthaben (z. B. 100 € oder 200 €).
+
+    <Warning>
+      Ohne Limit könnte im schlimmsten Fall deutlich mehr verbraucht werden, als du planst. Diese Einstellung ist deine **Notbremse** — bitte nicht überspringen.
+    </Warning>
+  </Step>
+  <Step title="Key an uns übermitteln">
+    Trage den Key in das persönliche Anmeldeformular ein, das wir dir zugeschickt haben.
+
+    <Note>
+      Den Gesamtablauf findest du in der [Ersteinrichtung](/erste-schritte/ersteinrichtung).
+    </Note>
+  </Step>
+</Steps>
+
+## Häufige Fragen
+
+<AccordionGroup>
+  <Accordion title="ChatGPT Plus reicht doch — brauche ich einen API-Key?">
+    Ja. ChatGPT (das Web-Interface) und die OpenAI-API sind zwei verschiedene Produkte mit separater Abrechnung. Für deinen Agent brauchst du die API.
+  </Accordion>
+  <Accordion title="Was kostet die API?">
+    Pro 1 Million Tokens, abhängig vom Modell. Aktuelle Preise: [openai.com/pricing](https://openai.com/pricing). Für normale Nutzung wenige Cent bis Euro pro Stunde.
+  </Accordion>
+  <Accordion title="Limit / Rate-Limit-Fehler — was tun?">
+    Neue Accounts haben oft niedrige Limits. Nach ein paar Tagen aktiver Nutzung und einer ersten Aufladung erhöht OpenAI die Limits automatisch.
+  </Accordion>
+</AccordionGroup>

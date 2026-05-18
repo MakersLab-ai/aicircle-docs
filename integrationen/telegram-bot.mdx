@@ -1,0 +1,94 @@
+---
+title: "Telegram-Bot anlegen"
+description: "In unter 5 Minuten zum eigenen Telegram-Bot — mit @BotFather."
+icon: "paper-plane"
+---
+
+<span className="label">integrationen</span>
+
+Dein Agent kommuniziert mit dir bequem über einen Telegram-Bot. Bot anlegen ist kostenlos, dauert wenige Minuten und macht Telegram selbst — du brauchst keine Entwicklerkenntnisse.
+
+## Schritt für Schritt
+
+<Steps>
+  <Step title="Telegram öffnen">
+    Öffne die Telegram-App auf Handy oder Desktop. Falls du Telegram noch nicht hast, lade die App hier für dein Gerät herunter:
+
+    <CardGroup cols={2}>
+      <Card title="iPhone / iPad" icon="apple" href="https://apps.apple.com/app/telegram-messenger/id686449807">
+        Telegram im App Store
+      </Card>
+      <Card title="Android" icon="google-play" href="https://play.google.com/store/apps/details?id=org.telegram.messenger">
+        Telegram bei Google Play
+      </Card>
+      <Card title="Mac" icon="apple" href="https://telegram.org/dl/macos">
+        Telegram für macOS
+      </Card>
+      <Card title="Windows / Linux" icon="desktop" href="https://desktop.telegram.org/">
+        Telegram Desktop
+      </Card>
+    </CardGroup>
+
+    Anschließend einmal kostenlos registrieren (Handynummer + Bestätigungscode). Eine Übersicht aller Plattformen findest du unter [telegram.org](https://telegram.org).
+  </Step>
+  <Step title="@BotFather suchen und starten">
+    Suche in Telegram nach **@BotFather** (der offizielle Bot von Telegram zum Erstellen anderer Bots). Achte auf das blaue Verifizierungs-Häkchen.
+
+    Klicke auf **Start** oder schreibe `/start`.
+  </Step>
+  <Step title="Neuen Bot anlegen">
+    Schreibe `/newbot` an BotFather. Er fragt dich nach:
+
+    1. **Anzeigename** des Bots, z. B. *„Mein Agent"*
+    2. **Benutzername** des Bots — muss auf `bot` enden, z. B. `mein_agent_bot`. Wenn der Name vergeben ist, schlägt BotFather Alternativen vor.
+  </Step>
+  <Step title="Token kopieren und sicher ablegen">
+    BotFather schickt dir eine Nachricht mit deinem **Bot-Token** (in der Nachricht steht „HTTP API Token"). Sieht aus wie:
+
+    ```
+    7123456789:AAH-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    ```
+
+    <Warning>
+      Wer diesen Token hat, kann deinen Bot übernehmen. Speichere ihn nur im Passwort-Manager und teile ihn nicht.
+    </Warning>
+  </Step>
+  <Step title="(Optional) Bot personalisieren">
+    Mit BotFather kannst du jetzt noch:
+
+    - `/setdescription` — kurze Beschreibung
+    - `/setabouttext` — „Über"-Text auf dem Bot-Profil
+    - `/setuserpic` — Profilbild hochladen
+    - `/setcommands` — Liste der verfügbaren Befehle
+  </Step>
+  <Step title="Token an uns übermitteln">
+    Trage den Token in das persönliche Anmeldeformular ein, das wir dir zugeschickt haben.
+
+    <Note>
+      Den Gesamtablauf findest du in der [Ersteinrichtung](/erste-schritte/ersteinrichtung).
+    </Note>
+  </Step>
+  <Step title="Bot starten">
+    Sobald wir dir Bescheid geben, dass dein Agent bereit ist: Suche deinen Bot in Telegram (unter dem Benutzernamen, den du in Schritt 3 vergeben hast) und klicke **Start**. Der Agent antwortet.
+  </Step>
+</Steps>
+
+## Häufige Fragen
+
+<AccordionGroup>
+  <Accordion title="Kostet ein Telegram-Bot etwas?">
+    Nein, Telegram-Bots sind komplett kostenlos. Es fallen nur Kosten beim KI-Anbieter an (siehe API-Keys).
+  </Accordion>
+  <Accordion title="Kann ich den Bot mit anderen teilen?">
+    Ja. Andere Menschen können deinen Bot unter seinem Benutzernamen finden und ihn nutzen. Wenn du das nicht willst, kannst du in den Agent-Einstellungen eine Allowlist von Telegram-Nutzern hinterlegen.
+  </Accordion>
+  <Accordion title="Token verloren oder kompromittiert — was tun?">
+    Schreibe BotFather `/revoke`, wähle deinen Bot aus und lass einen neuen Token erstellen. Melde dich danach kurz bei uns — wir hinterlegen den neuen Token (oder schicken dir nochmal das Anmeldeformular). Der alte Token funktioniert ab sofort nicht mehr.
+  </Accordion>
+  <Accordion title="Bot reagiert nicht — woran liegt's?">
+    Häufigste Ursachen:
+    1. Token falsch eingetragen (Tippfehler, Leerzeichen).
+    2. Dein Agent läuft gerade nicht.
+    3. Du hast den Bot blockiert oder den Chat gelöscht — einfach neu starten.
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,130 @@
+/* ============================================================
+   Agent Handbuch — Custom Brand Overrides
+   Mirror der Makers-Design-System-Tokens aus makerslab.ai
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  /* Brand Core */
+  --brand-navy:   #000F1E;
+  --brand-white:  #FFFFFF;
+  --brand-pink:   #E8959E;
+  --brand-purple: #5C3FED;
+  --brand-yellow: #FFD57F;
+  --brand-green:  #E7FD92;
+
+  /* Canonical Gradient (green → yellow → pink → purple) */
+  --gradient-brand: linear-gradient(
+    90deg,
+    var(--brand-green)  0%,
+    var(--brand-yellow) 33%,
+    var(--brand-pink)   66%,
+    var(--brand-purple) 100%
+  );
+}
+
+/* ============================================================
+   Typografie
+   ============================================================ */
+html, body {
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+
+code, pre, kbd, samp {
+  font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+}
+
+strong, b { font-weight: 700; }
+
+/* ============================================================
+   Scharfe Ecken (Brand-Rule)
+   ============================================================ */
+button,
+.card,
+[class*="card"],
+[class*="Card"],
+[class*="button"],
+[class*="Button"],
+img,
+pre,
+code,
+[class*="codeblock"],
+[class*="CodeBlock"] {
+  border-radius: 2px !important;
+}
+
+/* ============================================================
+   Selection — Brand Yellow
+   ============================================================ */
+::selection {
+  background: var(--brand-yellow);
+  color: var(--brand-navy);
+}
+
+/* ============================================================
+   Gradient Top Bar (Signature der Marke)
+   ============================================================ */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-brand);
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* ============================================================
+   /label_ Microheader (Brand-Signatur)
+   Verwendung in MDX: <span class="label">section</span>
+   ============================================================ */
+.label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  opacity: 0.85;
+}
+.label::before { content: "/"; }
+.label::after  { content: "_"; }
+
+/* ============================================================
+   Akzent-Hervorhebungen (rule 02)
+   ============================================================ */
+.em-green  { color: var(--brand-green);  font-weight: 700; }
+.em-yellow { color: var(--brand-yellow); font-weight: 700; }
+.em-pink   { color: var(--brand-pink);   font-weight: 700; }
+.em-purple { color: var(--brand-purple); font-weight: 700; }
+
+/* ============================================================
+   Boxed-Word Highlight (rule 03)
+   ============================================================ */
+.box-word {
+  display: inline-block;
+  padding: 0 6px;
+  background: var(--brand-white);
+  color: var(--brand-navy);
+  font-weight: 700;
+}
+
+/* ============================================================
+   Gradient-Text Utility
+   ============================================================ */
+.gradient-text {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+          color: transparent;
+}

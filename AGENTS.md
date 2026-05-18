@@ -1,33 +1,44 @@
-> **First-time setup**: Customize this file for your project. Prompt the user to customize this file for their project.
-> For Mintlify product knowledge (components, configuration, writing standards),
-> install the Mintlify skill: `npx skills add https://mintlify.com/docs`
+# Handbuch — Anleitungen für KI-Coding-Assistenten
 
-# Documentation project instructions
+## Was dieses Projekt ist
 
-## About this project
+- Mintlify-Doku unter [handbuch.makerslab.ai](https://handbuch.makerslab.ai) (Custom-Domain folgt nach Live-Schaltung)
+- Inhalt: Ersteinrichtung, API-Keys, Telegram-Bot, Preisvergleich
+- Zielgruppe: **Endnutzer ohne technischen Hintergrund**
+- Sprache: Deutsch (Du-Form)
+- Konfiguration: `docs.json`. Vorschau lokal mit `mint dev`, Linkcheck mit `mint broken-links`
+- Hinweis: Mintlify-CLI braucht Node ≤ 22 LTS (nicht Node 25+)
 
-- This is a documentation site built on [Mintlify](https://mintlify.com)
-- Pages are MDX files with YAML frontmatter
-- Configuration lives in `docs.json`
-- Run `mint dev` to preview locally
-- Run `mint broken-links` to check links
+## Terminologie (verbindlich)
 
-## Terminology
+- **„Agent"** für das, was die Nutzer von uns bekommen. **Nicht** „AI Circle", „Assistent", „Bot" als Produktbezeichnung.
+- **„Bot-Token"** für das Telegram-Geheimnis. Nicht „HTTP API Token" (auch wenn BotFather das so labelt — der Begriff darf maximal in Klammern als Wiedererkennungs-Hinweis stehen).
+- **„API-Key"** für die KI-Anbieter-Schlüssel.
+- **„kostenloses Kontingent"** statt „Free-Tier".
+- **Domain**: immer `makerslab.ai`, **nicht** `aimakerslab.de`.
 
-{/* Add product-specific terms and preferred usage */}
-{/* Example: Use "workspace" not "project", "member" not "user" */}
+## Tonalität & Stil
 
-## Style preferences
+- Du-Form, kurze Sätze, eine Idee pro Satz
+- Sentence-case für Überschriften
+- UI-Elemente fett: **Settings**, **Create Key**
+- Code-Formatierung für Dateinamen, Befehle, Pfade, Tokens
+- Mehrfach-Anweisungen als Listen oder `<Steps>`, nicht als Fließtext-Aufzählung
 
-{/* Add any project-specific style rules below */}
+## Was hier NICHT auftauchen darf
 
-- Use active voice and second person ("you")
-- Keep sentences concise — one idea per sentence
-- Use sentence case for headings
-- Bold for UI elements: Click **Settings**
-- Code formatting for file names, commands, paths, and code references
+- Entwickler-/IT-Pro-Vokabular: Git, GitHub, `.env`, Repository, Deploy, Vertex AI ohne Erklärung, Production/Region/Enterprise
+- Interne Details aus dem umgebenden Repo: Admin-Agent, Fleet, OpenClaw, Templates, Migrations, SSH, Infrastruktur
+- URL des Anmeldeformulars für Bot-Token/API-Keys (Nutzer bekommen den Link individuell von uns)
+- Konkrete Pfade auf der Serverseite (`.env`-Dateien, Container, etc.)
 
-## Content boundaries
+## Was im Handbuch fokussiert werden soll
 
-{/* Define what should and shouldn't be documented */}
-{/* Example: Don't document internal admin features */}
+- Was der Nutzer **selbst** tut: Konto anlegen, Token kopieren, ins Anmeldeformular eintragen
+- Was der Nutzer **wissen** muss: Kosten, Sicherheit, Limits setzen, Fehlerbehebung
+
+## Workflow-Konventionen
+
+- Bei jeder Änderung an MDX-Inhalt: `mint broken-links` ausführen, bevor du fertig meldest
+- ASCII-Anführungszeichen `"` innerhalb von MDX-Attributen (z. B. `<Frame caption="…">`) brechen den Parser. Inneren Anführungszeichen entweder typografisch (`„…"`) setzen oder ganz umformulieren.
+- Keine Screenshot-Platzhalter im veröffentlichten Stand (frühere `<Frame caption="Screenshot folgt: …">`-Blöcke wurden bewusst entfernt)

@@ -1,0 +1,73 @@
+---
+title: "API-Key von Google (Gemini)"
+description: "So bekommst du einen API-Schlüssel für Gemini-Modelle im Google AI Studio."
+icon: "key"
+---
+
+<span className="label">api keys</span>
+
+Mit einem Google-API-Key kann dein Agent die Gemini-Modelle nutzen. Der Einstieg ist günstig — Google bietet ein großzügiges kostenloses Kontingent über das AI Studio.
+
+<Warning>
+  **Setze auf jeden Fall ein Limit für den Token-Verbrauch — sobald du bezahlte
+  Nutzung aktivierst!** Solange du nur das kostenlose Kontingent verwendest,
+  kannst du nichts versehentlich überziehen. Wenn du eine Abrechnung aktivierst
+  (Schritt 5), hinterlege in der **Google Cloud Console → Billing → Budgets &
+  alerts** ein monatliches Budget (z. B. 100 € oder 200 €).
+</Warning>
+
+<Info>
+  Es gibt zwei Wege, einen Key zu bekommen: **Google AI Studio** (schnell, kostenloses Kontingent) und **Google Cloud / Vertex AI** (für Profis, mit eigener Abrechnung). Für den Agent reicht in der Regel das AI Studio.
+</Info>
+
+## Schritt für Schritt — über das AI Studio
+
+<Steps>
+  <Step title="Google AI Studio öffnen">
+    Gehe zu [aistudio.google.com](https://aistudio.google.com) und melde dich mit deinem Google-Konto an.
+  </Step>
+  <Step title="Auf „Get API key“ klicken">
+    Oben links siehst du den Button **Get API key** (oder direkt: [aistudio.google.com/apikey](https://aistudio.google.com/apikey)).
+  </Step>
+  <Step title="Key erstellen">
+    Klicke **Create API key** und wähle ein Google-Cloud-Projekt aus (oder lass automatisch eins anlegen).
+  </Step>
+  <Step title="Key kopieren und sicher ablegen">
+    Der Key wird dir angezeigt — kopiere ihn in deinen Passwort-Manager.
+
+    <Warning>
+      Der Key beginnt typischerweise mit `AIza...`. Teile ihn nicht öffentlich.
+    </Warning>
+  </Step>
+  <Step title="(Optional) Abrechnung aktivieren">
+    Das kostenlose Kontingent ist großzügig — fürs Ausprobieren brauchst du keine Kreditkarte. Wenn du mehr brauchst, kannst du in der **Google Cloud Console → Billing** eine Abrechnung aktivieren.
+  </Step>
+  <Step title="Bei aktivierter Abrechnung: Budget setzen — Pflicht!">
+    Wenn du Schritt 5 gemacht hast: Lege in der **Google Cloud Console → Billing → Budgets & alerts** ein **monatliches Budget** an (z. B. 100 € oder 200 €) und schalte E-Mail-Alerts ein.
+
+    <Warning>
+      Ohne Budget könnte im schlimmsten Fall deutlich mehr verbraucht werden, als du planst. Solange du nur das kostenlose Kontingent nutzt, kannst du diesen Schritt überspringen.
+    </Warning>
+  </Step>
+  <Step title="Key an uns übermitteln">
+    Trage den Key in das persönliche Anmeldeformular ein, das wir dir zugeschickt haben.
+
+    <Note>
+      Den Gesamtablauf findest du in der [Ersteinrichtung](/erste-schritte/ersteinrichtung).
+    </Note>
+  </Step>
+</Steps>
+
+## Häufige Fragen
+
+<AccordionGroup>
+  <Accordion title="Ist das wirklich kostenlos?">
+    Bis zu einem bestimmten Volumen pro Minute/Tag: ja. Aktuelle Limits: [ai.google.dev/pricing](https://ai.google.dev/pricing). Darüber hinaus zahlst du pro Token.
+  </Accordion>
+  <Accordion title="AI Studio oder Vertex AI?">
+    Für deinen Agent reicht das **AI Studio** — einfach, mit kostenlosem Kontingent. **Vertex AI** ist für IT-Profis gedacht (kein kostenloses Kontingent, mehr Einstellmöglichkeiten). Solange dir niemand explizit sagt „nimm Vertex", bleib beim AI Studio.
+  </Accordion>
+  <Accordion title="Welches Modell wird verwendet?">
+    Standard ist das aktuelle Gemini-Pro-Modell. Du kannst auch auf günstigere Flash-Varianten wechseln — über die Einstellungen oder einfach indem du es deinem Agent im Chat sagst.
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,205 @@
+---
+title: "Ersteinrichtung"
+description: "Schritt für Schritt zu deinem eigenen Agent — in etwa 15 Minuten."
+icon: "rocket"
+---
+
+<span className="label">erste schritte</span>
+
+Diese Seite führt dich von Null bis fertig. Du brauchst keine technischen
+Vorkenntnisse — alles, was du tust, machst du in deinem Browser oder in
+Telegram.
+
+<Info>
+  Plane dir etwa **15 Minuten am Stück** ein. Du brauchst einen Computer oder
+  ein Smartphone, eine E-Mail-Adresse und ein Zahlungsmittel für das Guthaben
+  beim KI-Anbieter.
+</Info>
+
+## Was wir gemeinsam tun
+
+<Steps>
+  <Step title="Vorbereitung">
+    Name für deinen Agent überlegen, Anbieter wählen, Zahlungsmittel und Anmeldelink griffbereit halten.
+  </Step>
+  <Step title="API-Key besorgen">
+    Bei deinem KI-Anbieter (OpenAI empfohlen — alternativ Claude oder Google) einen Zugangsschlüssel erstellen.
+  </Step>
+  <Step title="Telegram-Bot anlegen">
+    Telegram öffnen und mit dem offiziellen Helfer @BotFather einen eigenen Bot erstellen.
+  </Step>
+  <Step title="Daten an uns übermitteln">
+    Bot-Token und API-Key in das persönliche Anmeldeformular eintragen, das wir dir zuschicken.
+  </Step>
+  <Step title="Bot starten">
+    Deinen Bot in Telegram öffnen, **Start** klicken — der Agent antwortet.
+  </Step>
+</Steps>
+
+---
+
+## Schritt 1 — Vorbereitung
+
+<Steps>
+  <Step title="Name für deinen Agent">
+    Überleg dir kurz, wie dein Agent heißen soll — z. B. *„Mein Agent"*, *„Lotte"* oder *„Studio-Helfer"*. Den Namen brauchst du gleich beim Telegram-Bot.
+  </Step>
+  <Step title="KI-Anbieter wählen">
+    Wir empfehlen **OpenAI** als Standard — günstig, vielseitig, gut für den Einstieg. Alternativen sind **Claude** (Anthropic) und **Google Gemini**. Mehr dazu in Schritt 2.
+
+    <Tip>
+      Du musst dich jetzt noch nicht festlegen. Ein Anbieter reicht — weitere kannst du später jederzeit ergänzen.
+    </Tip>
+  </Step>
+  <Step title="Zahlungsmittel bereitlegen">
+    Lege eine Kreditkarte oder ein PayPal-Konto bereit. Du brauchst sie, um beim KI-Anbieter ein Startguthaben aufzuladen. Wir empfehlen **200 €**, damit du eine Weile entspannt arbeiten kannst, ohne zwischendurch nachzuladen.
+
+    <Note>
+      Bei Google (Gemini) gibt es ein kostenloses Kontingent — fürs reine Ausprobieren reicht das oft ohne Zahlungsmittel.
+    </Note>
+  </Step>
+  <Step title="Dein Anmeldelink">
+    Du hast von uns einen persönlichen Link für die Anmeldung erhalten. Halte ihn griffbereit (z. B. in deiner Mailbox geöffnet) — du brauchst ihn in Schritt 4.
+
+    <Note>
+      Keinen Link bekommen? Melde dich kurz bei uns über [makerslab.ai](https://makerslab.ai) — wir schicken dir den Link zu.
+    </Note>
+  </Step>
+</Steps>
+
+---
+
+## Schritt 2 — API-Key besorgen
+
+Der API-Key ist dein persönlicher Zugangsschlüssel zum KI-Anbieter. Du
+brauchst **mindestens einen** — du kannst auch mehrere hinterlegen und später
+im Bot zwischen ihnen wechseln.
+
+<Tip>
+  **Unsere Empfehlung: OpenAI.** Günstig, vielseitig, einfach. Wenn du
+  unsicher bist, was du wählen sollst — nimm OpenAI und leg los. Einen
+  Vergleich der drei Anbieter findest du auf der Seite [Preisvergleich der
+  Anbieter](/api-keys/preisvergleich).
+</Tip>
+
+<Columns cols={3}>
+  <Card title="OpenAI (GPT) — empfohlen" icon="key" href="/api-keys/openai">
+    Bekannt aus ChatGPT. Vielseitige Modelle, große Auswahl, sehr guter Einstieg.
+  </Card>
+  <Card title="Claude (Anthropic)" icon="key" href="/api-keys/claude">
+    Stark bei langen, durchdachten Antworten und Schreibarbeit.
+  </Card>
+  <Card title="Google (Gemini)" icon="key" href="/api-keys/google">
+    Günstiger Einstieg mit kostenlosem Kontingent.
+  </Card>
+</Columns>
+
+**Wichtig:** Nachdem du den Key erstellt hast, kopiere ihn sofort in einen
+Passwort-Manager oder eine sichere Notiz. Die Anbieter zeigen den Key meistens
+**nur einmal** an.
+
+---
+
+## Schritt 3 — Telegram-Bot anlegen
+
+Jetzt erstellst du deinen eigenen Telegram-Bot. Das macht Telegram selbst —
+mit dem offiziellen Helfer **@BotFather**. Kostenlos, dauert keine fünf Minuten.
+
+<Note>
+  Falls du Telegram noch nicht nutzt: kostenlose App installieren und Konto anlegen unter [telegram.org](https://telegram.org). Das geht in wenigen Minuten.
+</Note>
+
+<Card title="Zur Anleitung: Telegram-Bot anlegen" icon="paper-plane" href="/integrationen/telegram-bot">
+  Detaillierte Schritt-für-Schritt-Anleitung mit Screenshots.
+</Card>
+
+Am Ende dieses Schritts hast du:
+
+- den **Benutzernamen** deines Bots (z. B. `mein_agent_bot`)
+- den **Bot-Token** (sieht aus wie `7123456789:AAH-xxxxxxxxxxxxxxxxxxxxxxxxxxxx`)
+
+Beides legst du sicher ab — den Token brauchst du gleich.
+
+---
+
+## Schritt 4 — Daten an uns übermitteln
+
+Öffne jetzt das persönliche Anmeldeformular über den Link, den du von uns
+bekommen hast.
+
+Trage dort ein:
+
+1. Deinen **Telegram-Bot-Token** aus Schritt 3.
+2. **Mindestens einen API-Key** aus Schritt 2. Wenn du mehrere hast, kannst du sie alle eintragen.
+
+Klick auf **Absenden** (oder den entsprechenden Button im Formular).
+
+<Warning>
+  Übertrage Tokens und Keys nur über das Anmeldeformular, das wir dir geschickt
+  haben. Schicke sie **nicht** per E-Mail, Chat oder als Screenshot — sie sind
+  so sensibel wie ein Passwort.
+</Warning>
+
+Nach dem Absenden richten wir deinen Agent ein. Das dauert in der Regel
+nur wenige Minuten. Du bekommst von uns Bescheid, sobald alles bereit ist.
+
+---
+
+## Schritt 5 — Bot starten
+
+Sobald wir dir grünes Licht geben:
+
+<Steps>
+  <Step title="Bot in Telegram suchen">
+    Suche in der Telegram-Suche nach dem **Benutzernamen** deines Bots aus Schritt 3 (z. B. `@mein_agent_bot`).
+  </Step>
+  <Step title="Chat öffnen und starten">
+    Tippe auf deinen Bot, dann auf **Start** (oder schreibe `/start`).
+  </Step>
+  <Step title="Loslegen">
+    Schreibe deine erste Nachricht. Der Agent antwortet.
+  </Step>
+</Steps>
+
+---
+
+## Deine Checkliste
+
+<Check>Name für deinen Agent überlegt</Check>
+<Check>API-Key bei OpenAI (oder Alternative) erstellt und sicher gespeichert</Check>
+<Check>Telegram-Bot mit @BotFather angelegt, Token notiert</Check>
+<Check>Bot-Token + API-Key(s) im Anmeldeformular eingetragen</Check>
+<Check>Freigabe von uns erhalten</Check>
+<Check>Bot in Telegram geöffnet und mit `/start` gestartet</Check>
+
+---
+
+## Häufige Fragen
+
+<AccordionGroup>
+  <Accordion title="Ich habe keinen Anmeldelink bekommen — was tun?">
+    Melde dich kurz über [makerslab.ai](https://makerslab.ai). Wir schicken dir den persönlichen Link zu.
+  </Accordion>
+  <Accordion title="Welchen Anbieter soll ich wählen?">
+    Wenn du unsicher bist: **OpenAI**. Vielseitig, günstig, einfach. Eine Gegenüberstellung findest du im [Preisvergleich](/api-keys/preisvergleich).
+  </Accordion>
+  <Accordion title="Kann ich den API-Key oder Bot-Token später ändern?">
+    Ja. Wenn sich etwas ändert (neuer Key, Token kompromittiert, anderer Anbieter), schreib uns einfach. Wir aktualisieren das für dich oder schicken dir einen neuen Link zum Formular.
+  </Accordion>
+  <Accordion title="Muss ich alle drei API-Keys haben?">
+    Nein. Einer reicht. Mehr Keys sind nur sinnvoll, wenn du verschiedene Anbieter parallel nutzen möchtest.
+  </Accordion>
+  <Accordion title="Was kostet die Nutzung?">
+    Der Telegram-Bot ist kostenlos. Beim KI-Anbieter zahlst du pro Nutzung (Tokens). Details und ein Vergleich der Anbieter: [Preisvergleich](/api-keys/preisvergleich).
+  </Accordion>
+  <Accordion title="Wie sicher sind meine Daten?">
+    Bot-Token und API-Keys werden ausschließlich auf deinem persönlichen Agent gespeichert und nur dafür verwendet, die KI-Anfragen für dich auszuführen. Wir geben sie nicht weiter.
+  </Accordion>
+  <Accordion title="Der Bot antwortet nicht — woran kann's liegen?">
+    1. Hast du den Bot mit `/start` aktiviert?
+    2. Bist du sicher, dass du die Freigabe von uns bekommen hast?
+    3. Beim KI-Anbieter Guthaben aufgeladen?
+
+    Wenn alles passt und es trotzdem nicht klappt, schreib uns kurz.
+  </Accordion>
+</AccordionGroup>

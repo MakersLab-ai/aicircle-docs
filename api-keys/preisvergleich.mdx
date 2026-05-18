@@ -1,0 +1,99 @@
+---
+title: "Preisvergleich der Anbieter"
+description: "OpenAI, Claude und Google im Vergleich — was kostet was und was empfehlen wir."
+icon: "scale-balanced"
+---
+
+<span className="label">api keys</span>
+
+Drei Anbieter, drei Preismodelle. Diese Seite hilft dir, einen passenden
+auszuwählen — ohne dich durch technische Datenblätter zu kämpfen.
+
+<Info>
+  **Kurzfassung:** Wenn du unsicher bist — nimm **OpenAI**. Günstig, vielseitig,
+  einfach. Wer ein kostenloses Kontingent zum Ausprobieren möchte, startet mit
+  **Google Gemini**. **Claude** lohnt sich, wenn dir lange, gut formulierte
+  Antworten und Schreibarbeit besonders wichtig sind.
+</Info>
+
+## Wie wird abgerechnet?
+
+Alle drei Anbieter rechnen **pro Nutzung** ab — du zahlst nur das, was du
+tatsächlich verbrauchst. Abgerechnet wird in **Tokens** (kleine Wort-Bausteine,
+ca. 750 Wörter = 1.000 Tokens). Du musst das nicht im Kopf nachrechnen — wir
+zeigen dir unten, was 200 € in der Praxis bedeuten.
+
+<Note>
+  Die hier genannten Preise sind Richtwerte (Stand Anfang 2026) und können sich
+  ändern. Tagesaktuelle Preise findest du jeweils direkt beim Anbieter — Links
+  in der Tabelle.
+</Note>
+
+## Vergleich auf einen Blick
+
+| Kriterium                | OpenAI (GPT)            | Claude (Anthropic)        | Google (Gemini)          |
+|--------------------------|-------------------------|---------------------------|--------------------------|
+| **Empfehlung**           | Unser Standard          | Stark beim Schreiben      | Bestes kostenloses Kontingent |
+| **Mindest-Aufladung**    | ca. 5 $                 | ca. 5 €                   | keine — kostenlos starten |
+| **Kostenloses Kontingent** | nein                  | nein                      | ja, großzügig            |
+| **Preis: Einstiegsmodell** | sehr günstig          | günstig                   | sehr günstig             |
+| **Standard-Modell im Agent** | GPT-5.4 (Top)       | Claude Opus 4.6 (Top)     | Gemini Pro (Top)         |
+| **Preis: Top-Modell**    | hoch                    | hoch                      | mittel                   |
+| **Setup-Aufwand**        | leicht                  | leicht                    | leicht                   |
+| **Offizielle Preisseite** | [openai.com/pricing](https://openai.com/pricing) | [anthropic.com/pricing](https://www.anthropic.com/pricing) | [ai.google.dev/pricing](https://ai.google.dev/pricing) |
+| **Anleitung im Handbuch** | [API-Key holen](/api-keys/openai) | [API-Key holen](/api-keys/claude) | [API-Key holen](/api-keys/google) |
+
+## Was bekomme ich für 200 € Startguthaben?
+
+Dein Agent läuft standardmäßig mit den jeweils stärksten verfügbaren Modellen
+— **GPT-5.4** bei OpenAI und **Claude Opus 4.6** bei Anthropic. Diese liefern
+beste Qualität, sind aber auch die teuersten Modelle ihrer Anbieter. Was 200 €
+in der Praxis bedeuten, hängt deshalb stark davon ab, **wie intensiv** du den
+Agent nutzt:
+
+<CardGroup cols={3}>
+  <Card title="Gelegentlich" icon="leaf">
+    Wenige Anfragen pro Tag, kurze Antworten — 200 € reichen typischerweise **mehrere Wochen**.
+  </Card>
+  <Card title="Täglich aktiv" icon="user">
+    Mehrmals täglich, längere Konversationen, regelmäßiges Schreiben — 200 € halten **ein bis drei Wochen**.
+  </Card>
+  <Card title="Intensiv / Profi" icon="bolt">
+    Den ganzen Tag im Einsatz, lange Dokumente, viele parallele Aufgaben — 200 € können **in einer Woche** verbraucht sein.
+  </Card>
+</CardGroup>
+
+<Tip>
+  **Tipp zum Sparen:** Rede einfach mit deinem Agent darüber. Sag ihm z. B.
+  *„nutze für einfache Aufgaben bitte das günstigere Modell"* oder *„bleib
+  ab jetzt kompakter in den Antworten"* — er stellt sich darauf ein.
+</Tip>
+
+<Warning>
+  **Wichtig — setze ein Limit beim Anbieter!** Bevor du den API-Key in das
+  Anmeldeformular einträgst, hinterlege in deinem Anbieter-Account unter
+  „Billing" oder „Usage limits" ein **monatliches Ausgabenlimit** (z. B. 100 €
+  oder 200 €). So kann nichts versehentlich aus dem Ruder laufen. Bei Google
+  Gemini schützt zusätzlich das großzügige kostenlose Kontingent.
+</Warning>
+
+## Welcher Anbieter passt zu dir?
+
+<AccordionGroup>
+  <Accordion title="„Ich will einfach loslegen, ohne mich zu entscheiden“">
+    Nimm **OpenAI**. Solide in allen Disziplinen, große Modell-Auswahl, gut dokumentiert. → [API-Key bei OpenAI holen](/api-keys/openai)
+  </Accordion>
+  <Accordion title="„Ich will erstmal kostenlos ausprobieren“">
+    Nimm **Google Gemini**. Das kostenlose Kontingent reicht für ehrliches Testen, ohne Kreditkarte. → [API-Key bei Google holen](/api-keys/google)
+  </Accordion>
+  <Accordion title="„Ich nutze den Agent vor allem zum Texten / Brainstormen“">
+    **Claude** ist hier oft die stärkste Wahl — formulierte Antworten, gutes Mitdenken. → [API-Key bei Claude holen](/api-keys/claude)
+  </Accordion>
+  <Accordion title="„Ich brauche viele kleine, schnelle Antworten“">
+    **OpenAI GPT-Mini** oder **Google Gemini Flash** sind dafür gemacht — sehr günstig pro Anfrage. Beide Keys parallel zu hinterlegen, ist eine gute Idee.
+  </Accordion>
+</AccordionGroup>
+
+## Was wir nicht abrechnen
+
+Der Agent selbst sowie der Telegram-Bot sind in deiner monatlichen Servicegebühr enthalten. Du zahlst die KI-Anbieter **direkt** (mit deinem eigenen API-Key) — wir bekommen davon nichts und du behältst die volle Kontrolle über Kosten und Limits.

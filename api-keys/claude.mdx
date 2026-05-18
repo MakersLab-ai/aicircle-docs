@@ -1,0 +1,73 @@
+---
+title: "API-Key von Claude (Anthropic)"
+description: "So bekommst du einen API-Schlüssel für Claude in der Anthropic Console."
+icon: "key"
+---
+
+<span className="label">api keys</span>
+
+Mit einem Claude-API-Key kann dein Agent die Sprachmodelle von Anthropic nutzen (Standard im Agent: **Claude Opus 4.6**). Du brauchst dafür einen kostenlosen Account in der Anthropic Console und Guthaben.
+
+<Warning>
+  **Setze auf jeden Fall ein Limit für den Token-Verbrauch!** Bevor du deinen
+  Key in das Anmeldeformular einträgst, hinterlege in der Anthropic Console
+  unter **Settings → Plans & billing → Spend limits** ein monatliches
+  Ausgabenlimit (z. B. 100 € oder 200 €). So kann nichts versehentlich aus
+  dem Ruder laufen. Wie das geht, steht weiter unten in Schritt 6.
+</Warning>
+
+<Info>
+  Anthropic rechnet pro Nutzung (Tokens) ab. Plane für **Claude Opus** ein Startguthaben in der Größenordnung von **100–200 €** ein.
+</Info>
+
+## Schritt für Schritt
+
+<Steps>
+  <Step title="Anthropic Console öffnen">
+    Gehe zu [console.anthropic.com](https://console.anthropic.com) und melde dich an oder registriere dich. Die Anmeldung funktioniert mit Google-Account oder E-Mail.
+  </Step>
+  <Step title="In den API-Bereich wechseln">
+    Klicke links in der Seitenleiste auf **API Keys** (bzw. **Settings → API Keys**).
+  </Step>
+  <Step title="Neuen Key erstellen">
+    Klicke oben rechts auf **Create Key**. Gib dem Key einen sprechenden Namen, z. B. `ai-circle`, damit du ihn später wiederfindest.
+  </Step>
+  <Step title="Key sofort kopieren und sicher ablegen">
+    Der Key wird dir **nur einmal** angezeigt. Kopiere ihn und speichere ihn an einem sicheren Ort (Passwort-Manager).
+
+    <Warning>
+      Behandle den Key wie ein Passwort — nicht per E-Mail, Chat oder Screenshot weitergeben, nicht öffentlich posten. Wer den Key hat, kann auf deine Kosten Anfragen stellen.
+    </Warning>
+  </Step>
+  <Step title="Guthaben aufladen">
+    Wechsle zu **Settings → Plans & billing** und lade ein Startguthaben auf. Für **Claude Opus 4.6** sind **100–200 €** ein realistischer Einstieg.
+  </Step>
+  <Step title="Limit für den Verbrauch setzen — Pflicht!">
+    Im selben Bereich findest du **Spend limits**. Setze ein **monatliches Ausgabenlimit** in derselben Größenordnung wie dein Guthaben.
+
+    <Warning>
+      Ohne Limit könnte im schlimmsten Fall deutlich mehr verbraucht werden, als du planst. Diese Einstellung ist deine **Notbremse** — bitte nicht überspringen.
+    </Warning>
+  </Step>
+  <Step title="Key an uns übermitteln">
+    Trage den Key in das persönliche Anmeldeformular ein, das wir dir zugeschickt haben.
+
+    <Note>
+      Du weißt nicht, was damit gemeint ist? Schau in die [Ersteinrichtung](/erste-schritte/ersteinrichtung) — dort ist der gesamte Ablauf beschrieben.
+    </Note>
+  </Step>
+</Steps>
+
+## Häufige Fragen
+
+<AccordionGroup>
+  <Accordion title="Was kostet das?">
+    Anthropic rechnet pro 1 Million Tokens ab. **Claude Opus 4.6** ist das Premium-Modell und entsprechend hochpreisig. Wie lange dein Guthaben hält, hängt stark von der Nutzungsintensität ab — Details und Spannen im [Preisvergleich](/api-keys/preisvergleich). Genaue Preise: [anthropic.com/pricing](https://www.anthropic.com/pricing).
+  </Accordion>
+  <Accordion title="Ich habe den Key verloren — was tun?">
+    Erstelle in der Console einfach einen neuen Key. Schreib uns kurz, dann ersetzen wir den alten in deinem Agent (oder wir schicken dir nochmal das Anmeldeformular). Den alten Key löschst du danach in der Console, damit er nicht mehr funktioniert.
+  </Accordion>
+  <Accordion title="Welches Modell wird verwendet?">
+    Dein Agent nutzt standardmäßig **Claude Opus 4.6** — das aktuelle Top-Modell von Anthropic. Du kannst das Modell in den Einstellungen ändern (z. B. auf ein günstigeres Sonnet-/Haiku-Modell für Routine-Aufgaben). Oder bitte deinen Agent einfach im Chat darum.
+  </Accordion>
+</AccordionGroup>
