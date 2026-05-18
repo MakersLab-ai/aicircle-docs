@@ -44,6 +44,12 @@
             ]
           },
           {
+            "group": "Sicherheit & Datenschutz",
+            "pages": [
+              "datenschutz/firmendaten"
+            ]
+          },
+          {
             "group": "API-Keys",
             "pages": [
               "api-keys/preisvergleich",
