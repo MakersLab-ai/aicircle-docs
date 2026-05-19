@@ -36,33 +36,34 @@
         "tab": "Handbuch",
         "groups": [
           {
-            "group": "Start",
+            "group": "Einleitung",
             "pages": [
               "index",
-              "erste-schritte/ueberblick",
+              "erste-schritte/ueberblick"
+            ]
+          },
+          {
+            "group": "So arbeite ich mit dem Agent",
+            "pages": [
+              "erste-schritte/zusammenarbeit",
+              "erste-schritte/eigene-skills"
+            ]
+          },
+          {
+            "group": "Einrichtung",
+            "pages": [
               "erste-schritte/ersteinrichtung",
-              "erste-schritte/zusammenarbeit"
+              "api-keys/preisvergleich",
+              "api-keys/openai",
+              "api-keys/claude",
+              "api-keys/google",
+              "integrationen/telegram-bot"
             ]
           },
           {
             "group": "Sicherheit & Datenschutz",
             "pages": [
               "datenschutz/firmendaten"
-            ]
-          },
-          {
-            "group": "API-Keys",
-            "pages": [
-              "api-keys/preisvergleich",
-              "api-keys/openai",
-              "api-keys/claude",
-              "api-keys/google"
-            ]
-          },
-          {
-            "group": "Integrationen",
-            "pages": [
-              "integrationen/telegram-bot"
             ]
           }
         ]
