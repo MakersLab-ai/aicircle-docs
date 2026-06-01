@@ -1,0 +1,99 @@
+---
+title: "Gmail verbinden"
+description: "Verbinde dein Gmail-Postfach, damit dein Agent Mails lesen, sortieren und Entwürfe schreiben kann."
+icon: "envelope"
+---
+
+<span className="label">integrationen</span>
+
+Du kannst deinem Agent Zugriff auf dein Gmail-Postfach geben — dann liest er
+neue Mails, sortiert sie und schreibt dir Entwürfe vor. Du bleibst immer die
+Person, die entscheidet, was rausgeht.
+
+<Note>
+  Dieser Schritt ist etwas technischer als die anderen — du legst bei Google
+  einmalig eine Zugangs-App an. Plane ~10 Minuten ein. **Lieber gemeinsam?**
+  Melde dich bei Claudia — sie macht das in einem kurzen Video-Call mit dir.
+</Note>
+
+## Schritt für Schritt
+
+<Steps>
+  <Step title="Google Cloud Console öffnen">
+    Öffne [console.cloud.google.com](https://console.cloud.google.com) und melde
+    dich mit dem Google-Konto an, dessen Gmail du verbinden willst. Beim ersten
+    Mal bestätigst du einmal die Nutzungsbedingungen.
+  </Step>
+  <Step title="Projekt anlegen">
+    Oben in der Leiste auf die Projektauswahl klicken → **Neues Projekt** →
+    einen Namen vergeben (z. B. *„Mein Agent"*) → **Erstellen**. Warte kurz, bis
+    das Projekt oben ausgewählt ist.
+  </Step>
+  <Step title="Gmail aktivieren">
+    Im Menü links (☰) **APIs & Dienste → Bibliothek**. Suche nach **Gmail API**,
+    öffne sie und klicke **Aktivieren**.
+  </Step>
+  <Step title="Zustimmungsbildschirm einrichten">
+    **APIs & Dienste → OAuth-Zustimmungsbildschirm**. Wähle **Extern** →
+    **Erstellen**. Fülle aus: App-Name (z. B. *„Mein Agent"*), deine E-Mail als
+    Support- und Entwickler-Adresse. Speichern.
+
+    Wichtig: Unter **Testnutzer** dich selbst (deine Gmail-Adresse) hinzufügen.
+    So darf nur dein eigenes Konto die App nutzen.
+  </Step>
+  <Step title="Zugangsdaten erstellen">
+    **APIs & Dienste → Anmeldedaten → Anmeldedaten erstellen → OAuth-Client-ID**.
+    Als **Anwendungstyp** unbedingt **Desktop-App** wählen, Namen vergeben,
+    **Erstellen**.
+  </Step>
+  <Step title="JSON herunterladen">
+    Nach dem Erstellen erscheint ein Fenster mit **JSON herunterladen**. Lade die
+    Datei (heißt etwa `client_secret_….json`) herunter und merke dir, wo sie liegt.
+
+    <Warning>
+      Diese Datei enthält Zugangsdaten zu deiner App. Behandle sie wie ein
+      Passwort — nicht öffentlich teilen.
+    </Warning>
+  </Step>
+  <Step title="Datei an Claudia schicken">
+    Schick die heruntergeladene JSON-Datei an Claudia und sag ihr, welche
+    Gmail-Adresse verbunden werden soll. Den Rest richten wir ein.
+
+    <Note>
+      Unsicher beim Verschicken? Melde dich bei Claudia — ihr macht das gemeinsam
+      im Video-Call.
+    </Note>
+  </Step>
+  <Step title="Einmal Zugriff bestätigen">
+    Wir schicken dir einen Link. Öffne ihn, melde dich bei Google an und erlaube
+    den Zugriff. Danach landest du evtl. auf einer leeren oder Fehler-Seite — das
+    ist normal. Kopiere die Adresse aus der Browserzeile und schick sie zurück.
+    Fertig — dein Agent ist mit deinem Postfach verbunden.
+  </Step>
+</Steps>
+
+## Häufige Fragen
+
+<AccordionGroup>
+  <Accordion title="Warum muss ich selbst eine App anlegen?">
+    So bleibt der Zugriff vollständig in deiner Hand: Es ist deine App, dein
+    Konto, deine Daten. Du kannst den Zugriff jederzeit in deinem Google-Konto
+    wieder entziehen.
+  </Accordion>
+  <Accordion title="Sieht jemand anderes meine Mails?">
+    Nein. Der Zugriff gilt nur für dein eigenes Konto (du bist als einziger
+    Testnutzer eingetragen) und dient ausschließlich deinem Agent.
+  </Accordion>
+  <Accordion title="Kostet das etwas?">
+    Nein. Die Google Cloud Console und die Gmail-API sind für diese Nutzung
+    kostenlos. Kosten fallen nur beim KI-Anbieter an (siehe API-Keys).
+  </Accordion>
+  <Accordion title="Ich nutze Outlook / Microsoft 365 — geht das auch?">
+    Microsoft-Postfächer bereiten wir gerade vor. Melde dich bei Claudia, dann
+    sagen wir dir Bescheid, sobald es so weit ist.
+  </Accordion>
+  <Accordion title="Zugriff später entziehen?">
+    Jederzeit unter [myaccount.google.com/permissions](https://myaccount.google.com/permissions)
+    — dort deine Agent-App auswählen und Zugriff entfernen.
+  </Accordion>
+</AccordionGroup>
