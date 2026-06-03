@@ -6,7 +6,15 @@ icon: "key"
 
 <span className="label">api keys</span>
 
-Mit einem Google-API-Key kann dein Agent die Gemini-Modelle nutzen. Der Einstieg ist günstig — Google bietet ein großzügiges kostenloses Kontingent über das AI Studio.
+Mit einem Google-API-Key kann dein Agent die Gemini-Modelle nutzen. Der Einstieg ist günstig — Google bietet ein kostenloses Kontingent über das AI Studio.
+
+<Warning>
+  **Das kostenlose Kontingent umfasst nur die schnellen Flash-Modelle — nicht das
+  leistungsstarke Pro-Modell.** Das Pro-Modell ist im Gratis-Plan gesperrt und meldet
+  „Kontingent erschöpft", egal wie wenig du genutzt hast. Wenn du die volle Pro-Qualität
+  willst, musst du beim Anbieter eine **Abrechnung aktivieren** (Schritt 5–6). Zum
+  Ausprobieren mit Flash brauchst du das nicht.
+</Warning>
 
 <Warning>
   **Setze auf jeden Fall ein Limit für den Token-Verbrauch — sobald du bezahlte
@@ -67,7 +75,7 @@ Mit einem Google-API-Key kann dein Agent die Gemini-Modelle nutzen. Der Einstieg
   <Accordion title="AI Studio oder Vertex AI?">
     Für deinen Agent reicht das **AI Studio** — einfach, mit kostenlosem Kontingent. **Vertex AI** ist für IT-Profis gedacht (kein kostenloses Kontingent, mehr Einstellmöglichkeiten). Solange dir niemand explizit sagt „nimm Vertex", bleib beim AI Studio.
   </Accordion>
-  <Accordion title="Welches Modell wird verwendet?">
-    Standard ist das aktuelle Gemini-Pro-Modell. Du kannst auch auf günstigere Flash-Varianten wechseln — über die Einstellungen oder einfach indem du es deinem Agent im Chat sagst.
+  <Accordion title="Welches Modell wird verwendet — Pro oder Flash?">
+    Das hängt von deinem Plan ab: **Im kostenlosen Kontingent stehen nur die Flash-Modelle zur Verfügung** — schnell und für viele Aufgaben gut. Das **leistungsstärkere Pro-Modell** lässt sich erst nutzen, wenn du eine **Abrechnung aktivierst** (Schritt 5–6); im Gratis-Plan ist es gesperrt. Wenn dir Flash zu wenig Leistung bietet, ist das fast immer der Grund — dann entweder Abrechnung aktivieren oder einen anderen Anbieter wählen. Du kannst dem Agent im Chat sagen, welches Modell er nehmen soll.
   </Accordion>
 </AccordionGroup>
