@@ -57,7 +57,8 @@
               "api-keys/openai",
               "api-keys/claude",
               "api-keys/google",
-              "integrationen/telegram-bot"
+              "integrationen/telegram-bot",
+              "integrationen/gmail-verbinden"
             ]
           },
           {
