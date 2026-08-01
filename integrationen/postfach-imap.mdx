@@ -1,0 +1,109 @@
+---
+title: "Eigenes Postfach anbinden (IMAP)"
+description: "Dein Agent arbeitet direkt in deinem normalen E-Mail-Postfach — egal bei welchem Anbieter. Die Einrichtung macht er selbst, du brauchst nur die Zugangsdaten."
+icon: "at"
+---
+
+<span className="label">integrationen</span>
+
+Du hast ein ganz normales E-Mail-Postfach bei einem Anbieter wie World4You, easyname, all-inkl, IONOS, Hetzner oder auf einem eigenen Server? Dein Agent kann direkt darin arbeiten: neue E-Mails lesen, dich sofort informieren, Antworten vorbereiten und — mit deiner Freigabe — auch senden.
+
+Diese Seite ist für alle Postfächer, die **weder Microsoft 365** ([eigene Anleitung](/integrationen/microsoft365)) **noch Gmail** ([eigene Anleitung](/integrationen/gmail-verbinden)) sind.
+
+Die Einrichtung übernimmt dein Agent selbst — du beantwortest ihm im Chat ein paar Fragen, mehr nicht.
+
+## Was dein Agent danach kann
+
+| Können | Wie |
+| ------ | --- |
+| E-Mails lesen | In dem Postfach, das du anbindest |
+| Auf neue E-Mails reagieren | Dein Agent wird bei neuer Post automatisch geweckt und meldet sich bei dir |
+| Antworten vorbereiten | Als Entwurf, den du vorher liest |
+| E-Mails senden | An dich direkt; an alle anderen erst nach deiner Freigabe |
+
+<Note>
+**Dein Postfach, deine Adresse.** Dein Agent bekommt kein eigenes Postfach dazu — er arbeitet in genau dem, das du ihm gibst, und antwortet auch von deiner Adresse aus.
+</Note>
+
+## Was du dafür brauchst
+
+<Steps>
+  <Step title="Die E-Mail-Adresse">
+    Die Adresse, die dein Agent betreuen soll — zum Beispiel `kontakt@deinefirma.at`.
+  </Step>
+  <Step title="Den Namen deines Anbieters">
+    Also wo das Postfach liegt (World4You, easyname, IONOS, …). Die passenden
+    technischen Einstellungen sucht dein Agent selbst heraus — du musst keine
+    Servernamen oder Portnummern kennen.
+  </Step>
+  <Step title="Ein Passwort für das Postfach">
+    Am besten ein **App-Passwort**: ein eigenes Zusatz-Passwort nur für den
+    Agenten, das du im Kundenbereich deines Anbieters erstellst und jederzeit
+    wieder zurückziehen kannst — ohne dein Hauptpasswort zu ändern. Bietet dein
+    Anbieter das nicht an, geht auch das normale Postfach-Passwort.
+  </Step>
+</Steps>
+
+## So läuft die Einrichtung
+
+<Steps>
+  <Step title="Sag deinem Agenten Bescheid">
+    Schreib ihm im Chat einfach: *„Bitte binde mein E-Mail-Postfach an."*
+  </Step>
+  <Step title="Er fragt dich das Nötigste">
+    Welche Adresse, welcher Anbieter — und an wen er später **direkt** senden
+    darf. Alle anderen Empfänger bekommen grundsätzlich nur einen Entwurf, den
+    du freigibst.
+  </Step>
+  <Step title="Du schickst ihm das Passwort">
+    Direkt im Chat. Er legt es sofort geschützt ab und zeigt es nie wieder an —
+    weder dir noch sonst jemandem.
+  </Step>
+  <Step title="Er testet und meldet Vollzug">
+    Dein Agent prüft, ob er das Postfach lesen kann, schickt dir eine
+    Test-E-Mail und stellt sicher, dass er bei neuer Post auch wirklich geweckt
+    wird. Erst wenn alle drei Punkte passen, meldet er sich fertig.
+  </Step>
+</Steps>
+
+<Tip>
+Die ganze Einrichtung dauert meist nur ein paar Minuten Chat. Wenn dein Anbieter ungewöhnliche Einstellungen braucht, sucht dein Agent sie selbst heraus und fragt bei Bedarf nach.
+</Tip>
+
+## Sicherheit: Was eingebaut ist
+
+- **Senden mit Leitplanken.** An Personen außerhalb deiner Freigabe-Liste geht nie etwas direkt raus — solche E-Mails legt dein Agent dir vorher als Entwurf vor.
+- **Passwort bleibt geheim.** Es wird geschützt gespeichert und nie in einer Antwort, einer Nachricht oder einer Datei sichtbar.
+- **Jederzeit widerrufbar.** Ein App-Passwort ziehst du im Kundenbereich deines Anbieters mit einem Klick zurück — damit ist der Zugriff sofort beendet.
+- **Eingehende Post ist kein Befehl.** Dein Agent behandelt den Inhalt fremder E-Mails als reine Information und führt keine Anweisungen aus, die darin stehen.
+
+## Häufige Fragen
+
+<AccordionGroup>
+  <Accordion title="Funktioniert das mit jedem Anbieter?">
+    Mit praktisch allen — Voraussetzung ist nur, dass dein Anbieter den
+    normalen E-Mail-Abruf (IMAP) erlaubt. Das ist bei Firmen- und
+    Domain-Postfächern der Standard. Bei Microsoft 365 und Gmail nutzt du
+    besser die jeweils eigene Anleitung, die ist dort komfortabler.
+  </Accordion>
+  <Accordion title="Liest mein Agent auch alte E-Mails?">
+    Beim Start merkt er sich nur den aktuellen Stand — dein Archiv arbeitet er
+    nicht ungefragt durch. Er reagiert auf neue Post; ältere E-Mails liest er
+    nur, wenn du ihn danach fragst.
+  </Accordion>
+  <Accordion title="Kostet mich das laufend etwas?">
+    Das Warten auf neue E-Mails verbraucht nichts. Dein Agent wird erst aktiv,
+    wenn tatsächlich Post ankommt — und mehrere E-Mails kurz hintereinander
+    weckt er in einem Rutsch.
+  </Accordion>
+  <Accordion title="Kann ich mehrere Postfächer anbinden?">
+    Ja. Sag deinem Agenten einfach die nächste Adresse — er richtet sie
+    zusätzlich ein.
+  </Accordion>
+  <Accordion title="Wie beende ich die Anbindung?">
+    Zieh das App-Passwort bei deinem Anbieter zurück oder sag deinem Agenten,
+    dass er das Postfach nicht mehr verwenden soll. Möchtest du nur die
+    Benachrichtigungen bei neuer Post pausieren, sag ihm das — Lesen und Senden
+    bleiben dann weiter möglich.
+  </Accordion>
+</AccordionGroup>

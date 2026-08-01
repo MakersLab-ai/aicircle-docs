@@ -59,7 +59,8 @@
               "api-keys/google",
               "integrationen/telegram-bot",
               "integrationen/gmail-verbinden",
-              "integrationen/microsoft365"
+              "integrationen/microsoft365",
+              "integrationen/postfach-imap"
             ]
           },
           {
