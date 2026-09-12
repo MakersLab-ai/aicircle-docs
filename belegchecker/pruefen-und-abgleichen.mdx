@@ -1,0 +1,191 @@
+---
+title: "Prüfen und abgleichen"
+description: "Der wöchentliche Durchgang: Entwürfe zuordnen, Auffälligkeiten klären, Kontoauszug hochladen und sehen, wo ein Beleg fehlt."
+icon: "list-check"
+---
+
+<span className="label">belegchecker</span>
+
+Einreichen läuft nebenbei. Prüfen ist die Arbeit, die bleibt — und sie ist
+überschaubar, wenn sie regelmäßig passiert. Diese Seite beschreibt den
+Durchgang, den eine Person bei euch macht.
+
+## Der Rhythmus
+
+<CardGroup cols={3}>
+  <Card title="Wöchentlich" icon="calendar-week">
+    Übersicht öffnen und die Kacheln abarbeiten, die etwas von dir wollen.
+    Zehn Minuten.
+  </Card>
+  <Card title="Monatlich" icon="calendar">
+    Kontoauszüge hochladen und abgleichen, sobald sie da sind.
+  </Card>
+  <Card title="Zum Abschluss" icon="box-archive">
+    Exportieren und an die Buchhaltung geben — siehe
+    [Für die Buchhaltung](/belegchecker/buchhaltung).
+  </Card>
+</CardGroup>
+
+## Der wöchentliche Durchgang
+
+Die **Übersicht** zeigt nur, was offen ist. Steht dort nichts, ist nichts zu
+tun.
+
+<Steps>
+  <Step title="Entwürfe ohne Belegkreis">
+    Belege, die ohne Kürzel hereinkamen. Weise jedem einen Belegkreis zu — in
+    dem Moment bekommt er seine Nummer. Mehrere auf einmal gehen über die
+    Mehrfachauswahl in der Belegliste.
+  </Step>
+  <Step title="Dublettenverdacht">
+    Zwei Belege mit demselben Aussteller und derselben Rechnungsnummer. Das ist
+    ein **Hinweis, keine Entscheidung** — bestätige oder verwirf ihn. Genau
+    gleiche Dateien werden schon beim Einlesen abgefangen und tauchen hier gar
+    nicht erst auf.
+  </Step>
+  <Step title="Betragsprüfung angemerkt">
+    Netto plus Steuer ergibt nicht den Bruttobetrag. Meist ein Rundungsfall oder
+    ein schlecht lesbarer Bon. Öffne den Beleg, vergleiche mit dem Dokument
+    daneben und korrigiere von Hand.
+  </Step>
+  <Step title="Zahlungsnachweis-Vorschlag">
+    Eine PayPal-, Klarna- oder Stripe-Bestätigung wurde einer Händlerrechnung
+    zugeordnet. Bestätige den Vorschlag — oder lehne ihn ab. Warum das wichtig
+    ist, steht unter [Für die Buchhaltung](/belegchecker/buchhaltung).
+  </Step>
+  <Step title="Fehler unerledigt">
+    Im **Verarbeitungsverlauf** steht, was nicht durchgelaufen ist, mit Grund.
+    Du kannst den Eintrag erneut verarbeiten lassen oder ihn mit einer Notiz auf
+    erledigt setzen.
+  </Step>
+</Steps>
+
+## Einen Beleg bearbeiten
+
+Links die Felder, rechts das Dokument — beim Scrollen bleibt es stehen, damit
+du vergleichen kannst. Alle Felder sind änderbar.
+
+<AccordionGroup>
+  <Accordion title="Belegkreis wechseln vergibt eine neue Nummer" icon="hashtag">
+    Schiebst du einen Beleg von „Bank" nach „Amex", bekommt er eine Nummer aus
+    der Amex-Folge. Die alte Nummer bleibt am Beleg gespeichert und auffindbar,
+    wird aber **nicht** neu vergeben. Das ist Absicht: eine Lücke in der
+    Nummernfolge lässt sich erklären, eine doppelt vergebene Nummer nicht.
+  </Accordion>
+  <Accordion title="Verwerfen oder stornieren — nicht dasselbe" icon="trash">
+    **Verwerfen** geht nur bei Entwürfen, also bei Belegen ohne Nummer. Das ist
+    endgültig.
+
+    **Stornieren** ist der Weg für alles, was schon eine Nummer hat. Der Beleg
+    verschwindet aus der normalen Liste und aus dem Export, bleibt aber
+    auffindbar und lässt sich wiederherstellen. Seine Nummer bleibt belegt.
+  </Accordion>
+  <Accordion title="Bezahlt oder nicht bezahlt" icon="circle-check">
+    Der Zahlungsstatus ist unabhängig davon, ob der Beleg erfasst ist. Du kannst
+    ihn einzeln setzen oder für eine ganze Auswahl auf einmal.
+  </Accordion>
+  <Accordion title="Suchen" icon="magnifying-glass">
+    Das Suchfeld findet Aussteller, Rechnungsnummer, die Kurzbeschreibung — und
+    den **Text im Beleg selbst**. Zwei Einschränkungen: Belege, die vor Ende
+    August 2026 erfasst wurden, sind im Volltext nicht durchsuchbar, und Belege,
+    die aus dem Mailtext statt aus einem Anhang stammen, ebenfalls nicht.
+  </Accordion>
+</AccordionGroup>
+
+## Den Kontoauszug abgleichen
+
+Hier zeigt sich, was der Belegchecker eigentlich soll: **sehen, wo ein Beleg
+fehlt.**
+
+<Steps>
+  <Step title="Auszug herunterladen — am besten als CSV">
+    Fast jede Bank und jeder Kartenanbieter bietet den Umsatz als CSV-Datei an.
+    Nimm die. Sie wird direkt gelesen, ohne Umweg über die Texterkennung, und
+    ist dadurch schneller und genauer. PDF und Foto gehen auch.
+
+    Du musst nichts einstellen — welche Spalte das Datum und welche den Betrag
+    enthält, erkennt der Belegchecker selbst. Auch Umlaute aus deutschen und
+    österreichischen Bankexporten sind kein Problem.
+  </Step>
+  <Step title="Hochladen">
+    Unter **Abgleich → „Neue Abrechnung"**. Belegkreis und Zeitraum sind
+    freiwillig; der Zeitraum ist freier Text wie „Amex 01/26" und dient nur der
+    Gruppierung. Lässt du ihn leer, wird der Monat aus den Buchungsdaten
+    abgeleitet.
+  </Step>
+  <Step title="Abgleich läuft im Hintergrund">
+    Fenster schließen ist erlaubt.
+  </Step>
+  <Step title="Die Positionen durchgehen">
+    Oben stehen die Kennzahlen, darunter jede Buchungszeile mit dem Beleg, der
+    dazu gefunden wurde.
+  </Step>
+</Steps>
+
+### Die vier Zustände einer Buchungszeile
+
+| Zustand | Bedeutung | Was du tust |
+| ------- | --------- | ----------- |
+| **verknüpft** | Ein Beleg ist eindeutig zugeordnet | Nichts |
+| **Beleg fehlt** | Zu dieser Abbuchung gibt es keinen Beleg | Beleg besorgen und nachreichen |
+| **unklar** | Es gibt Kandidaten, aber keinen sicheren | Ansehen und entscheiden |
+| **kein Beleg nötig** | Zum Beispiel eine Umbuchung oder eine Gutschrift | Setzt du selbst — mit Begründung |
+
+<Note>
+**„Kein Beleg nötig" verlangt eine Begründung.** Ein Satz genügt, aber er ist
+Pflicht — und er wandert in den Export. Damit kann später jeder nachlesen,
+warum zu dieser Zeile kein Beleg liegt. Genau das will ein Prüfer wissen.
+</Note>
+
+Verknüpfen und lösen kannst du jederzeit von Hand. Für einen **Sammelbeleg**,
+der mehrere Buchungszeilen abdeckt, lässt sich derselbe Beleg mehrfach
+zuordnen.
+
+### Warum manches „unklar" bleibt
+
+Der Belegchecker verknüpft lieber gar nicht als falsch. Drei Regeln sorgen
+dafür — und erklären die meisten offenen Zeilen:
+
+<CardGroup cols={3}>
+  <Card title="Der Betrag" icon="coins">
+    Er darf um höchstens 10 Cent oder 5 % abweichen. Darüber wird die Zeile
+    herabgestuft, nie stillschweigend verknüpft.
+  </Card>
+  <Card title="Das Datum" icon="calendar-days">
+    Der Beleg darf bis zu 90 Tage **vor** der Abbuchung liegen, aber höchstens
+    3 Tage **danach**. Eine Rechnung, die Wochen nach der Belastung datiert ist,
+    gehört nicht dazu.
+  </Card>
+  <Card title="Die Währung" icon="money-bill-transfer">
+    Es wird **nie** umgerechnet. Eine Rechnung in Dollar gegen eine Belastung in
+    Euro bekommst du als Vorschlag — nachrechnen und entscheiden musst du.
+  </Card>
+</CardGroup>
+
+<Tip>
+**Erneut abgleichen ist billig.** Hast du fehlende Belege nachgereicht, starte
+den Abgleich für denselben Auszug einfach noch einmal. Der Text wurde
+zwischengespeichert, das kostet keine erneute Texterkennung.
+</Tip>
+
+<Warning>
+**Entschiedenes wird nicht überschrieben.** Zeilen, die du schon bearbeitet
+hast, bleiben stehen. Findet ein neuer Durchlauf eine davon nicht wieder — etwa
+weil du einen anderen Auszugszeitraum hochgeladen hast —, wird der **ganze
+Abgleich verweigert** statt deine Arbeit zu überschreiben. Du siehst dann einen
+gelben Hinweis „Abgleich nicht gespeichert". Das ist kein Fehler, sondern die
+Sicherung.
+</Warning>
+
+## Grenzen, die im Alltag auffallen
+
+- **Kein Bankzugang.** Der Belegchecker holt keine Umsätze bei deiner Bank ab.
+  Jeder Auszug wird von dir hochgeladen.
+- **Kein Format je Bank.** Es gibt keine Voreinstellung „Erste Bank" oder
+  „Amex". Jeder Auszug wird gelesen und interpretiert — dadurch geht jedes
+  Format, aber nichts ist garantiert. Kontrollier den ersten Auszug einer neuen
+  Quelle genauer.
+- **Sehr große CSV-Dateien.** Über etwa 2.000 Zeilen wird der Auszug abgewiesen
+  statt gekürzt. Lade ihn dann monatsweise hoch.
+- **Mehrere gleich gute Kandidaten** ergeben bewusst **keinen** Vorschlag. Lieber
+  gar keiner als der falsche.

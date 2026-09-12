@@ -1,0 +1,182 @@
+---
+title: "Belege einreichen"
+description: "Die Arbeitsanweisung für dein Team: Beleg an die Beleg-Adresse schicken, Kürzel in den Betreff, fertig. Wer nur Belege zuschickt, braucht keinen Zugang."
+icon: "paper-plane"
+---
+
+<span className="label">belegchecker</span>
+
+Diese Seite ist die, die du deinem Team gibst. Wer nur Belege zuschickt,
+braucht **keinen Zugang** und muss nichts weiter wissen als das hier.
+
+## Die eine Regel
+
+<Note>
+**Beleg an die Beleg-Adresse schicken. Kürzel des Belegkreises in den Betreff.**
+
+Alles andere auf dieser Seite sind Sonderfälle.
+</Note>
+
+Eine Weiterleitung sieht dann so aus:
+
+```
+An:       pferd-hufeisen-anker@…
+Betreff:  bg amex
+Anhang:   Rechnung_Juli.pdf
+```
+
+`bg` ist das Schlüsselwort, `amex` das Kürzel des Belegkreises. Beides steht
+in deiner Übersicht im Belegchecker, dort siehst du auch deine eigene
+Beleg-Adresse und kannst sie kopieren.
+
+**Ohne Kürzel geht nichts verloren** — der Beleg wird trotzdem ausgelesen. Er
+bleibt aber ein **Entwurf ohne Nummer**, bis ihn jemand von Hand einem
+Belegkreis zuordnet. Ein paar Entwürfe sind kein Problem, hundert sind
+Handarbeit.
+
+<Tip>
+**Der Weg ohne Kürzel.** Hinterlegst du einmalig unter **Einstellungen →
+Belegkreise** das Zahlungsmittel — die letzten vier Stellen der Karte, eine
+IBAN oder die PayPal-Adresse — dann erkennt der Belegchecker den Belegkreis oft
+selbst aus dem Beleg. Das Kürzel im Betreff gewinnt trotzdem immer, wenn eines
+da ist. Von einer Kreditkarte werden ausschließlich die letzten vier Stellen
+gespeichert, nie die volle Nummer.
+</Tip>
+
+## Das Statuswort
+
+Steht hinter dem Kürzel noch ein Wort — ab Werk `neu` —, wird der Beleg als
+**noch nicht bezahlt** geführt:
+
+```
+Betreff:  bg bank neu
+```
+
+Das ist praktisch für Eingangsrechnungen mit Zahlungsziel. Welches Wort das
+ist, stellst du unter **Einstellungen → Erkennung in E-Mails** ein.
+
+## Die drei Wege hinein
+
+<Tabs>
+  <Tab title="Weiterleiten">
+    Der Alltagsweg. Rechnung kommt per Mail herein, du leitest sie an die
+    Beleg-Adresse weiter und schreibst das Kürzel in den Betreff. Der
+    ursprüngliche Betreff darf stehen bleiben — das Kürzel muss nur irgendwo
+    darin vorkommen.
+
+    Auch eine weitergeleitete Mail, die selbst wieder eine Mail als Anhang
+    enthält, wird ausgepackt.
+  </Tab>
+  <Tab title="Direkt zuschicken lassen">
+    Für Lieferanten, die dir ohnehin jeden Monat eine Rechnung schicken: gib
+    ihnen gleich die Beleg-Adresse. Dann kommt die Rechnung ohne Umweg an.
+
+    Willst du unter deiner eigenen Adresse arbeiten — etwa `belege@deinefirma.at` —,
+    richte in deinem Postfach eine Weiterleitung dorthin ein. Eine zweite
+    Empfangsadresse braucht es dafür nicht.
+  </Tab>
+  <Tab title="Hochladen oder fotografieren">
+    Über **Belege → „+ Beleg hochladen"**. Eine Datei oder gleich ein ganzer
+    Stapel (bis zu 200 auf einmal). Am Handy öffnet **„Foto aufnehmen"** direkt
+    die Kamera — gut für Kassenbons, solange sie noch lesbar sind.
+
+    Beim Hochladen wählst du den Belegkreis im Dialog aus. Diese Auswahl gewinnt
+    gegen alles andere.
+  </Tab>
+</Tabs>
+
+## Was hineingeht — und was nicht
+
+| Geht | Geht nicht |
+| ---- | ---------- |
+| PDF | Word- und Excel-Dateien |
+| Fotos und Scans: JPG, PNG, HEIC, TIFF, GIF, WEBP, BMP | ZIP-Archive |
+| CSV | Visitenkarten-Anhänge, verschlüsselte Anhänge, `winmail.dat` |
+| | SVG-Grafiken — die werden immer abgewiesen |
+
+**Größe:** bis 25 MB pro Datei beim Hochladen, bis 50 MB für eine ganze Mail
+samt Anhängen.
+
+Schickt jemand eine Mail mit einem Anhang, der nicht in der linken Spalte
+steht, wird dieser Anhang übersprungen — die Mail selbst geht nicht verloren
+und ist im Verarbeitungsverlauf nachlesbar.
+
+<Tip>
+**Signaturbilder stören nicht.** Das LinkedIn-, Xing- oder Instagram-Symbol aus
+deiner Signatur wird erkannt und nicht als Beleg gewertet. Ihr müsst eure
+Signaturen nicht anpassen.
+</Tip>
+
+## Wer schicken darf
+
+Ab Werk darf **jeder** an deine Beleg-Adresse schreiben, der sie kennt. Wenn du
+das eingrenzen willst, trag unter **Einstellungen → Absender-Whitelist** die
+erlaubten Adressen ein — ganze Firmendomains gehen auch.
+
+<Warning>
+Sobald die Liste **eine einzige** Adresse enthält, ist sie scharf: alles andere
+wird abgewiesen. Trag also gleich alle ein, die zuschicken sollen — inklusive
+deiner eigenen Adresse und der eurer Lieferanten. Abgewiesene Mails siehst du
+im Verarbeitungsverlauf, der Absender bekommt aber keine Rückmeldung.
+</Warning>
+
+## Wann etwas passiert
+
+<CardGroup cols={2}>
+  <Card title="Alle 15 Minuten" icon="clock">
+    So oft wird das Postfach geleert. In der Übersicht steht, wann zuletzt
+    abgerufen wurde — und daneben ein Knopf **„Jetzt abrufen"**, wenn du nicht
+    warten willst.
+  </Card>
+  <Card title="Rückwirkend 14 Tage" icon="calendar-days">
+    Wird länger nicht abgerufen, werden Mails aus den letzten zwei Wochen
+    nachgeholt. Was älter ist, kommt nicht mehr von selbst — dann lade den Beleg
+    einfach hoch.
+  </Card>
+</CardGroup>
+
+Nach dem Abruf läuft die Auswertung im Hintergrund. Du kannst das Fenster
+schließen; ein hochgeladener Stapel wird fertig, auch wenn du weggehst.
+
+## Wenn etwas nicht ankommt
+
+<AccordionGroup>
+  <Accordion title="Der Beleg taucht gar nicht auf" icon="circle-question">
+    Prüfe zuerst die **Adresse** — wurde zwischendurch umbenannt? Alte Adressen
+    bleiben zwar dauerhaft zustellbar, ein Tippfehler aber nicht. Eine Mail an
+    eine Adresse, die es nie gab, wird stillschweigend verworfen; es kommt keine
+    Fehlermeldung zurück.
+
+    Zweiter Blick: die **Absender-Whitelist**. Steht dort etwas drin und die
+    Absenderadresse nicht, wurde die Mail abgewiesen — nachzulesen im
+    **Verarbeitungsverlauf**.
+  </Accordion>
+  <Accordion title="Der Beleg ist da, hat aber keine Nummer" icon="hashtag">
+    Dann fehlte das Kürzel im Betreff und es war kein Zahlungsmittel hinterlegt.
+    Er liegt als **Entwurf** in der Belegliste. Weise ihm einen Belegkreis zu —
+    die Nummer wird in dem Moment vergeben.
+  </Accordion>
+  <Accordion title="Der Anhang wurde übersprungen" icon="file-circle-xmark">
+    Dann war das Dateiformat keines aus der Liste oben. Häufigster Fall: eine
+    Rechnung als Word-Datei. Bitte den Lieferanten um ein PDF — oder drucke sie
+    als PDF und lade sie hoch.
+  </Accordion>
+  <Accordion title="Die Rechnung steht im Mailtext, nicht im Anhang" icon="envelope-open-text">
+    Das geht auch: der Mailtext selbst wird dann zum Beleg. Bei solchen Belegen
+    gibt es allerdings keine Volltextsuche über den Inhalt — suchen kannst du
+    über Aussteller, Nummer und Kurzbeschreibung.
+  </Accordion>
+</AccordionGroup>
+
+## Zum Ausdrucken
+
+<Note>
+**Beleg-Spickzettel**
+
+1. Beleg per Mail an: `…@…` *(eure Beleg-Adresse hier eintragen)*
+2. In den Betreff: `bg` + Kürzel des Belegkreises — z. B. `bg amex`, `bg bank`, `bg paypal`
+3. Noch nicht bezahlt? `neu` dahinter: `bg bank neu`
+4. Erlaubt sind PDF, Fotos und CSV — **keine** Word- oder Excel-Dateien
+5. Kassenbon: abfotografieren, solange er lesbar ist
+6. Im Zweifel trotzdem schicken — lieber ein Entwurf zu viel als ein Beleg zu wenig
+</Note>

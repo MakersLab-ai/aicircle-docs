@@ -1,0 +1,162 @@
+---
+title: "Belegchecker — was er macht"
+description: "Du schickst deine Belege an eine Mailadresse. Der Belegchecker liest sie aus, nummeriert sie, gleicht sie gegen deine Kontoauszüge ab und legt alles für die Buchhaltung bereit."
+icon: "receipt"
+---
+
+<span className="label">belegchecker</span>
+
+Der Belegchecker nimmt dir die Arbeit ab, die vor der Buchhaltung liegt: Belege
+einsammeln, auslesen, nummerieren, ordnen — und prüfen, ob zu jeder Abbuchung
+auf deinem Konto auch ein Beleg da ist.
+
+Der ganze Ablauf in einem Satz: **Du schickst deine Belege an eine Mailadresse,
+und am Monatsende lädst du ein fertiges Paket für deinen Steuerberater
+herunter.**
+
+Du erreichst ihn unter [belegchecker.makerslab.ai](https://belegchecker.makerslab.ai).
+
+## Der Ablauf
+
+<Steps>
+  <Step title="Belege kommen herein">
+    Per E-Mail an deine eigene Beleg-Adresse — weitergeleitet aus deinem
+    Postfach oder gleich vom Lieferanten dorthin geschickt. Oder du lädst sie
+    hoch, auch als Foto vom Handy.
+  </Step>
+  <Step title="Der Belegchecker liest sie aus">
+    Er erkennt den Text auf Rechnung, Kassenbon oder Screenshot und holt sich
+    daraus die Felder: Aussteller, Datum, Rechnungsnummer, Netto, Steuer,
+    Brutto, Währung.
+  </Step>
+  <Step title="Er ordnet und nummeriert">
+    Jeder Beleg landet in einem **Belegkreis** — das ist deine Ablage je
+    Zahlungsweg, also zum Beispiel „Bank", „Amex", „PayPal", „Kassa". Dort
+    bekommt er eine fortlaufende Nummer wie `AMEX-014`.
+  </Step>
+  <Step title="Du gleichst deinen Kontoauszug ab">
+    Du lädst den Auszug hoch. Der Belegchecker stellt jede Abbuchung dem
+    passenden Beleg gegenüber und zeigt dir, wo einer fehlt.
+  </Step>
+  <Step title="Du exportierst">
+    Ein Paket zum Herunterladen: eine Excel- und eine CSV-Übersicht plus alle
+    Belegdateien. Das geht an deine Buchhaltung.
+  </Step>
+</Steps>
+
+## Was er kann — und was nicht
+
+<Note>
+Die rechte Spalte ist kein Kleingedrucktes, sondern der wichtigste Teil dieser
+Seite. Wenn dein Team weiß, wo die Grenze verläuft, spart ihr euch die
+Enttäuschungen.
+</Note>
+
+| Das kann er | Das kann er nicht |
+| ----------- | ----------------- |
+| Belege aus E-Mails, Uploads und Handyfotos auslesen | Word-, Excel- oder ZIP-Dateien lesen — nur PDF, Bilder und CSV |
+| Netto, Steuer, Brutto, Steuersätze und Reverse Charge erfassen | Auf Sachkonten oder Kostenstellen kontieren |
+| Fortlaufend nummerieren, je Belegkreis eine eigene Folge | Eine Nummer wiederverwenden — Lücken sind Absicht |
+| Kontoauszüge als PDF, Foto oder CSV lesen | Sich selbst bei deiner Bank einloggen und Umsätze holen |
+| Abbuchung und Beleg einander zuordnen | Währungen umrechnen — eine Dollar-Rechnung gegen eine Euro-Abbuchung bleibt deine Entscheidung |
+| Doppelt eingereichte Belege erkennen | Entscheiden, ob eine Dublette wirklich eine ist |
+| Eine PayPal-Zahlungsbestätigung mit der Händlerrechnung zusammenführen | Dir die Prüfung abnehmen — jeder Vorschlag will bestätigt werden |
+| Ein Paket für den Steuerberater ausgeben | In DATEV, BMD oder ein anderes Buchhaltungsprogramm exportieren |
+
+<Warning>
+**Der Belegchecker ist eine Vorbuchhaltung, kein Buchhaltungsprogramm.** Er
+bereitet auf, was danach gebucht wird. Er bucht nicht, er erstellt keine
+Umsatzsteuervoranmeldung und er ersetzt weder deine Buchhaltung noch deinen
+Steuerberater. Eine direkte Schnittstelle zu DATEV oder BMD gibt es nicht — die
+Übergabe läuft über das Export-Paket.
+</Warning>
+
+## Was du dafür brauchst
+
+<Steps>
+  <Step title="Einen Zugang">
+    Die Anmeldung läuft über **Philipp AI** — ein Knopf auf der Anmeldeseite,
+    kein eigenes Passwort. Dein Konto entsteht dort, der Belegchecker übernimmt
+    daraus nur, wer du bist.
+  </Step>
+  <Step title="Deine Belegkreise">
+    Beim ersten Anmelden richtest du sie ein: für jeden Zahlungsweg einen.
+    Faustregel — eine Karte, ein Konto, ein Belegkreis. Du kannst sie später
+    jederzeit ergänzen.
+  </Step>
+  <Step title="Deine Beleg-Adresse">
+    Bekommst du automatisch. Sie besteht aus drei Wörtern, damit man sie am
+    Telefon vorlesen kann, und lässt sich in den Einstellungen umbenennen.
+  </Step>
+</Steps>
+
+## Wer im Team was tut
+
+Das ist die Frage, die am häufigsten kommt — und die Antwort ist angenehmer als
+erwartet: **Die meisten in deinem Team brauchen gar keinen Zugang.**
+
+<CardGroup cols={3}>
+  <Card title="Belege zuschicken" icon="paper-plane">
+    Braucht **keinen** Zugang. Wer die Beleg-Adresse kennt, kann Belege
+    hinschicken oder weiterleiten — vom Handy, aus dem Postfach, unterwegs.
+    Das ist die Aufgabe für die meisten im Team.
+  </Card>
+  <Card title="Prüfen und abgleichen" icon="list-check">
+    Braucht einen Zugang. Das macht typischerweise eine Person — du selbst oder
+    wer bei euch die Vorbereitung für die Buchhaltung macht.
+  </Card>
+  <Card title="Exportieren" icon="box-archive">
+    Braucht denselben Zugang. Einmal im Monat oder im Quartal, je nachdem wie
+    ihr abrechnet.
+  </Card>
+</CardGroup>
+
+<Note>
+**Ein Zugang gehört zu genau einem Ablagebereich.** Mehrere Personen können
+heute nicht mit eigenen Anmeldungen in denselben Bestand schauen — meldet sich
+jemand neu an, bekommt er einen eigenen, leeren Bereich, nicht deinen. Teile
+deshalb auch deine Anmeldung nicht: gemeinsame Zugänge sind vertraglich nicht
+zulässig, und dein Team braucht sie für das Zuschicken ohnehin nicht. Willst du
+mehrere Personen mit eigener Anmeldung im selben Bestand, sag uns Bescheid.
+</Note>
+
+## Damit ihr sofort richtig startet
+
+Drei Dinge entscheiden darüber, ob der Belegchecker vom ersten Tag an sauber
+arbeitet:
+
+<AccordionGroup>
+  <Accordion title="Das Kürzel gehört in den Betreff" icon="tag">
+    Schreib in den Betreff, zu welchem Belegkreis der Beleg gehört — zum
+    Beispiel `bg amex`. Ohne dieses Kürzel wird der Beleg zwar ausgelesen,
+    bleibt aber ein **Entwurf ohne Nummer** und muss später von Hand zugeordnet
+    werden. Alternativ hinterlegst du einmalig das Zahlungsmittel je Belegkreis,
+    dann geht es auch ohne. Beides steht auf der Seite
+    [Belege einreichen](/belegchecker/belege-einreichen).
+  </Accordion>
+  <Accordion title="Kontoauszüge als CSV, nicht als Scan" icon="file-csv">
+    Fast jede Bank bietet den Auszug als CSV-Datei zum Herunterladen an. Die
+    wird direkt gelesen — das ist schneller und deutlich genauer als ein
+    eingescanntes PDF. Ein Scan geht auch, ist aber die zweite Wahl.
+  </Accordion>
+  <Accordion title="Jeder Wert ist ein Vorschlag" icon="eye">
+    Was der Belegchecker ausliest, ist ein Vorschlag — sichtbar, prüfbar und
+    änderbar. Es gibt keine Entscheidung, die ohne dich passiert. Genau deshalb
+    gehört die Durchsicht in euren Ablauf: siehe
+    [Prüfen und abgleichen](/belegchecker/pruefen-und-abgleichen).
+  </Accordion>
+</AccordionGroup>
+
+## Weiterlesen
+
+<CardGroup cols={3}>
+  <Card title="Belege einreichen" icon="paper-plane" href="/belegchecker/belege-einreichen">
+    Die Arbeitsanweisung für dein Team — eine Seite zum Ausdrucken.
+  </Card>
+  <Card title="Prüfen und abgleichen" icon="list-check" href="/belegchecker/pruefen-und-abgleichen">
+    Was du regelmäßig durchgehst, und was die Zustände bedeuten.
+  </Card>
+  <Card title="Für die Buchhaltung" icon="calculator" href="/belegchecker/buchhaltung">
+    Export, Nummernkreise, Umsatzsteuer, Aufbewahrung.
+  </Card>
+</CardGroup>

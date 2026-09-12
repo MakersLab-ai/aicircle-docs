@@ -64,6 +64,15 @@
             ]
           },
           {
+            "group": "Belegchecker",
+            "pages": [
+              "belegchecker/ueberblick",
+              "belegchecker/belege-einreichen",
+              "belegchecker/pruefen-und-abgleichen",
+              "belegchecker/buchhaltung"
+            ]
+          },
+          {
             "group": "Sicherheit & Datenschutz",
             "pages": [
               "datenschutz/firmendaten"
