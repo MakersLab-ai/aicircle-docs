@@ -1,0 +1,173 @@
+---
+title: "Für die Buchhaltung"
+description: "Was im Export steht, wie die Belegnummern funktionieren, was mit der Umsatzsteuer passiert — und was du deinem Steuerberater sagen kannst."
+icon: "calculator"
+---
+
+<span className="label">belegchecker</span>
+
+Diese Seite ist für die Person, die mit den Zahlen weiterarbeitet — bei euch
+intern oder in der Steuerkanzlei.
+
+## Der Export
+
+Am Ende steht ein Paket zum Herunterladen. Es enthält immer beides: eine
+**Excel-Datei zum Arbeiten** und eine **CSV-Datei zum Weitergeben** — dazu alle
+Belegdateien in einem Ordner. Weil sie im selben Paket liegen, ist die Spalte
+„Belegdatei" ein anklickbarer Verweis auf das Dokument.
+
+<Tabs>
+  <Tab title="Belege-Export">
+    Unter **Belege → Exportieren**. Du wählst einen Datumsbereich und beliebig
+    viele Belegkreise.
+
+    Spalten: Nummer · Belegkreis · Belegart · Rechnungsdatum · Eingang ·
+    Rechnungsleger · Leistung · Netto · Steuer · Steuersatz · Steuerzeilen ·
+    Reverse-Charge · Summe · Währung · Status · Betragsprüfung · Verknüpfter
+    Beleg · Belegdatei
+
+    Stornierte Belege sind nicht enthalten.
+  </Tab>
+  <Tab title="Auszugs-Export">
+    Auf der Detailseite eines Kontoauszugs unter **„↓ Herunterladen"**. Die
+    Reihenfolge ist die des Kontoauszugs — bewusst nicht umsortiert, damit man
+    Zeile für Zeile mitlesen kann.
+
+    Spalten: Position · Belegdatum · Beschreibung · Betrag EUR · Fremdwährung ·
+    Betrag Fremdwährung · Status · Begründung · Beleg-Nr · Aussteller ·
+    Rechnungsdatum · Rechnungsbetrag · Verknüpfter Beleg · Belegdatei
+  </Tab>
+</Tabs>
+
+<Warning>
+**Es gibt keine Schnittstelle zu DATEV, BMD oder einem anderen
+Buchhaltungsprogramm.** Die CSV-Datei ist ein allgemeines Format mit deutschen
+Spaltennamen, kein Importformat eines bestimmten Programms. Die Übergabe läuft
+über dieses Paket — in der Praxis nimmt die Kanzlei es so entgegen und bucht
+daraus.
+</Warning>
+
+## Belegnummern
+
+- Jeder **Belegkreis** hat seine **eigene fortlaufende Folge**, zum Beispiel
+  `AMEX-001`, `AMEX-002`. Die Startnummer legst du beim Anlegen fest.
+- Ein Beleg bekommt seine Nummer in dem Moment, in dem er einem Belegkreis
+  zugeordnet wird — nicht schon beim Eintreffen.
+- **Lücken sind Absicht.** Storniert ihr einen Beleg oder verschiebt ihn in
+  einen anderen Belegkreis, wird seine Nummer **nicht** wiederverwendet. Eine
+  Lücke kann man erklären, eine doppelt vergebene Nummer nicht.
+- Frühere Nummern bleiben am Beleg gespeichert und auffindbar. Fragt jemand
+  nach `BANK-042` und der Beleg heißt heute `AMEX-017`, findet ihr ihn trotzdem.
+
+## Umsatzsteuer
+
+<AccordionGroup>
+  <Accordion title="Jede ausgewiesene Steuerzeile wird einzeln übernommen" icon="percent">
+    Hat ein Beleg mehrere Steuersätze — der Klassiker ist der Gastronomiebon —,
+    stehen alle gedruckten Zeilen mit Satz, Bemessungsgrundlage und Steuerbetrag
+    im Feld „Steuerzeilen laut Beleg" und im Export.
+
+    Das Feld **Steuersatz** zeigt den ausgewiesenen Satz, sobald ein einzelner
+    Satz die Beträge auf den Cent erklärt. Nur wenn das kein einzelner Satz
+    kann, steht dort der rechnerische Mischsatz — dann sagen dir die Steuerzeilen
+    daneben, was tatsächlich auf dem Beleg steht.
+  </Accordion>
+  <Accordion title="Netto plus Steuer wird nachgerechnet" icon="equals">
+    Stimmt die Summe nicht auf zwei Cent genau, wird der Beleg ein zweites Mal
+    ausgewertet. Geht es dann immer noch nicht auf, steht ein Hinweis am Beleg
+    und in der Spalte **Betragsprüfung** — sichtbar, nicht stillschweigend
+    geradegebogen.
+  </Accordion>
+  <Accordion title="Reverse Charge ist ein eigenes Feld" icon="right-left">
+    Bei Reverse Charge bleiben Steuer, Steuersatz und Steuerzeilen im Export
+    leer, und in der Spalte **Reverse-Charge** steht „Ja". Das ist die Angabe,
+    die eure Buchhaltung braucht.
+  </Accordion>
+  <Accordion title="Ratenzahlungen stehen mit der Rate" icon="repeat">
+    Bei einer Ratenvereinbarung wird der **Ratenbetrag** erfasst, nicht die
+    Gesamtsumme des Vertrags — weil genau die Rate auf dem Kontoauszug steht und
+    zugeordnet werden soll.
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+**Es gibt keine Kontierung.** Keine Sachkonten, keine Kostenstellen, keine
+Steuerschlüssel und keine Einteilung nach Aufwandsart. Die einzige Gliederung
+ist der Belegkreis — also der Zahlungsweg. Kontiert wird danach, im
+Buchhaltungsprogramm.
+</Note>
+
+## Doppelte Zahlungen vermeiden
+
+Bezahlst du über PayPal, Klarna oder Stripe, liegen am Ende **zwei** Dokumente
+zur selben Ausgabe vor: die Rechnung des Händlers und die
+Zahlungsbestätigung des Zahlungsdienstes.
+
+Der Belegchecker erkennt das und unterscheidet die **Belegart**: `Rechnung`,
+`Zahlungsnachweis` oder `Quittung`. Zu einem erkannten Zahlungsnachweis
+schlägt er die passende Händlerrechnung vor.
+
+<Warning>
+**Bestätige diese Vorschläge.** Erst mit deiner Bestätigung wird der
+Zahlungsnachweis aus dem Kandidatenpool des Kontoabgleichs genommen. Ohne sie
+können beide Dokumente als eigenständige Belege durchlaufen — und wer danach
+bucht, bucht dieselbe Ausgabe zweimal.
+</Warning>
+
+Im Export steht der Gegenpart in der Spalte **Verknüpfter Beleg**.
+
+## Aufbewahrung und Löschen
+
+- Belege, Kontoauszüge und die daraus erfassten Daten bleiben gespeichert,
+  solange dein Konto besteht.
+- **Gelöschte Belege werden zunächst nur ausgeblendet**, damit ihre Belegnummer
+  nicht doppelt vergeben wird. Sie lassen sich wiederherstellen.
+- Die E-Mails an die Beleg-Adresse bleiben samt Anhängen als **Herkunftsnachweis**
+  zum jeweiligen Beleg erhalten. Damit ist belegbar, woher ein Beleg stammt.
+- Für Buchhaltungsunterlagen gelten die gesetzlichen Aufbewahrungsfristen —
+  in Österreich insbesondere **§ 132 BAO** und **§ 212 UGB**, also sieben Jahre.
+  Endet der Vertrag, werden die Daten gelöscht oder zurückgegeben, soweit keine
+  Aufbewahrungspflicht entgegensteht.
+
+<Tip>
+**Verlass dich nicht allein auf den Belegchecker als Archiv.** Zieh dir zu jedem
+Abschluss den Export und leg ihn dort ab, wo eure Buchhaltungsunterlagen
+ohnehin liegen. Das Paket enthält die Belegdateien selbst — es ist ein
+vollständiges Archiv für den jeweiligen Zeitraum.
+</Tip>
+
+## Wo die Daten liegen
+
+Die Verarbeitung findet in der EU statt. Für die **Inhalte deiner Belege bist
+du der Verantwortliche** — wir verarbeiten sie in deinem Auftrag, auf Grundlage
+des Auftragsverarbeitungsvertrags.
+
+Zwei Schritte laufen über KI-Dienste: das Lesbarmachen des Belegs und das
+Herauslesen der Felder. Beide bekommen nur den Inhalt des jeweiligen Belegs —
+keine Kontodaten und keine Zuordnung, wer ihn eingereicht hat. Nach Angaben
+beider Anbieter werden diese Daten **nicht zum Training ihrer Modelle
+verwendet**.
+
+Welche Dienste das im Einzelnen sind, wofür sie eingesetzt werden und was genau
+an sie übermittelt wird, steht vollständig in der
+[Datenschutzerklärung des Belegcheckers](https://belegchecker.makerslab.ai/datenschutz).
+Diese Seite ist auch ohne Anmeldung erreichbar — du kannst sie deinem
+Steuerberater oder eurer Datenschutzbeauftragten direkt schicken.
+
+## Was ihr trotzdem selbst tun müsst
+
+<Warning>
+**Jeder ausgelesene Wert ist ein Vorschlag.** Es gibt keine Entscheidung, die
+ohne einen Menschen passiert: Jeder Beleg bleibt sichtbar, prüfbar und
+änderbar. Für die Richtigkeit und Vollständigkeit der Ergebnisse gibt es keine
+Garantie — sie gehören vor der Weiterverarbeitung geprüft. Das ist keine
+Formalie, sondern der Grund, warum der wöchentliche Durchgang im Ablauf steht.
+</Warning>
+
+Ebenfalls nicht Teil der Leistung: **Beratung in Rechts-, Steuer- oder
+Compliance-Fragen.** Was buchhalterisch richtig ist, entscheidet eure
+Buchhaltung oder eure Steuerkanzlei — der Belegchecker bereitet nur auf.
+
+Und: Der Belegchecker wird laufend weiterentwickelt. Es kommen Funktionen dazu
+und es ändert sich Verhalten. Wenn euch etwas auffällt oder fehlt, sagt es uns —
+das meiste, was heute drinsteckt, kam genau so zustande.
