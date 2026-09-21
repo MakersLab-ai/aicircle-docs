@@ -60,7 +60,8 @@
               "integrationen/telegram-bot",
               "integrationen/gmail-verbinden",
               "integrationen/microsoft365",
-              "integrationen/postfach-imap"
+              "integrationen/postfach-imap",
+              "integrationen/slack"
             ]
           },
           {
