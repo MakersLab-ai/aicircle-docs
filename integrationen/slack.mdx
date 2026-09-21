@@ -1,6 +1,6 @@
 ---
 title: "Slack anbinden"
-description: "Schreib deinem Agent direkt in Slack: als Direktnachricht oder mit @Erwähnung in einem Channel. Du legst eine Slack-App an, wir schalten sie frei."
+description: "Schreib deinem Agent direkt in Slack: als Direktnachricht oder mit @Erwähnung in einem Channel. Dein Agent richtet das selbst ein, du legst nur eine Slack-App an."
 icon: "slack"
 ---
 
@@ -8,7 +8,7 @@ icon: "slack"
 
 Wenn du ohnehin den ganzen Tag in Slack arbeitest, kannst du deinen Agent auch dort erreichen. Telegram bleibt dabei bestehen. Du hast danach einfach zwei Wege zu ihm.
 
-Die Einrichtung teilt sich auf: Du legst in Slack eine kleine App an und kopierst zwei Schlüssel heraus. Den Rest übernehmen wir.
+Die Einrichtung macht dein Agent selbst. Du sagst ihm Bescheid, legst nach seiner Anleitung in Slack eine kleine App an und gibst ihm zwei Schlüssel. Den Rest erledigt er.
 
 ## Was dein Agent danach kann
 
@@ -19,7 +19,7 @@ Die Einrichtung teilt sich auf: Du legst in Slack eine kleine App an und kopiers
 | Dateien und Bilder | Was du ihm in Slack schickst, kann er lesen und auswerten |
 
 <Note>
-**Nur du sprichst mit ihm.** Wir schalten deinen Agent ausschließlich für dein eigenes Slack-Konto frei. Andere Personen in deinem Workspace können ihn sehen, bekommen aber keine Antwort. So laufen keine Kosten auf deinen API-Key, die du nicht selbst auslöst.
+**Nur du sprichst mit ihm.** Dein Agent schaltet sich ausschließlich für dein eigenes Slack-Konto frei. Andere Personen in deinem Workspace können ihn sehen, bekommen aber keine Antwort. So laufen keine Kosten auf deinen API-Key, die du nicht selbst auslöst.
 </Note>
 
 ## Was du dafür brauchst
@@ -30,126 +30,47 @@ Die Einrichtung teilt sich auf: Du legst in Slack eine kleine App an und kopiers
 ## Schritt für Schritt
 
 <Steps>
-  <Step title="Slack-App anlegen">
-    Öffne [api.slack.com/apps/new](https://api.slack.com/apps/new) und melde dich mit deinem Slack-Konto an.
+  <Step title="Deinem Agent Bescheid sagen">
+    Schreib deinem Agent in Telegram zum Beispiel:
 
-    Klicke auf **Create New App** → **From a manifest** und wähle deinen Workspace aus.
+    > Ich möchte, dass du einen Slack-Zugriff einrichtest.
+
+    Er führt dich ab jetzt Schritt für Schritt durch. Die folgenden Schritte zeigen dir, was dich erwartet.
   </Step>
-  <Step title="Vorlage einfügen">
-    Slack zeigt dir ein Textfeld. Lösche den Inhalt und füge stattdessen diese Vorlage ein:
+  <Step title="Slack-App anlegen">
+    Dein Agent schickt dir den Link [api.slack.com/apps/new](https://api.slack.com/apps/new). Dort klickst du auf **Create New App** → **From a manifest** und wählst deinen Workspace.
 
-    ```json
-    {
-      "display_information": {
-        "name": "Mein Agent",
-        "description": "Mein persönlicher Agent"
-      },
-      "features": {
-        "bot_user": { "display_name": "Mein Agent", "always_online": true },
-        "app_home": {
-          "home_tab_enabled": true,
-          "messages_tab_enabled": true,
-          "messages_tab_read_only_enabled": false
-        }
-      },
-      "oauth_config": {
-        "scopes": {
-          "bot": [
-            "app_mentions:read",
-            "channels:history",
-            "channels:read",
-            "chat:write",
-            "emoji:read",
-            "files:read",
-            "files:write",
-            "groups:history",
-            "groups:read",
-            "im:history",
-            "im:read",
-            "im:write",
-            "mpim:history",
-            "mpim:read",
-            "mpim:write",
-            "pins:read",
-            "pins:write",
-            "reactions:read",
-            "reactions:write",
-            "usergroups:read",
-            "users:read"
-          ]
-        }
-      },
-      "settings": {
-        "socket_mode_enabled": true,
-        "event_subscriptions": {
-          "bot_events": [
-            "app_home_opened",
-            "app_mention",
-            "channel_rename",
-            "member_joined_channel",
-            "member_left_channel",
-            "message.channels",
-            "message.groups",
-            "message.im",
-            "message.mpim",
-            "pin_added",
-            "pin_removed",
-            "reaction_added",
-            "reaction_removed"
-          ]
-        }
-      }
-    }
-    ```
-
-    Ersetze beide Male `Mein Agent` durch den Namen deines Agents. So heißt er dann auch in Slack.
-
-    Klicke auf **Next** und dann auf **Create**.
-
-    <Tip>
-      Verlangt euer Workspace, dass Apps möglichst wenige Rechte bekommen? Dann melde dich vorher bei uns. Es gibt eine schlankere Variante ohne Dateien und Reaktionen.
-    </Tip>
+    Dann bekommst du von deinem Agent eine fertige Vorlage mit seinem Namen. Lösch den Inhalt des Textfelds, füge die Vorlage ein und klicke auf **Next** und **Create**.
   </Step>
   <Step title="Ersten Schlüssel erzeugen (App-Token)">
-    Du bist jetzt in den Einstellungen deiner neuen App. Gehe links auf **Basic Information** und scrolle zu **App-Level Tokens**.
-
-    Klicke auf **Generate Token and Scopes**, gib einen beliebigen Namen ein (zum Beispiel `verbindung`) und füge über **Add Scope** den Eintrag `connections:write` hinzu. Klicke auf **Generate**.
+    Links auf **Basic Information** → **App-Level Tokens** → **Generate Token and Scopes**. Gib einen beliebigen Namen ein, füge über **Add Scope** den Eintrag `connections:write` hinzu und klicke auf **Generate**.
 
     Kopiere den Schlüssel, der mit `xapp-` beginnt.
   </Step>
   <Step title="App installieren und zweiten Schlüssel kopieren (Bot-Token)">
-    Gehe links auf **Install App** und klicke auf **Install to Workspace**. Bestätige mit **Allow**.
-
-    Danach steht dort das **Bot User OAuth Token**. Kopiere es. Es beginnt mit `xoxb-`.
-
-    <Warning>
-      Mit diesen beiden Schlüsseln kann jemand als dein Agent in Slack schreiben und mitlesen. Bewahre sie nur im Passwort-Manager auf und schick sie ausschließlich an uns.
-    </Warning>
+    Links auf **Install App** → **Install to Workspace** → **Allow**. Kopiere das **Bot User OAuth Token**, es beginnt mit `xoxb-`.
   </Step>
   <Step title="Deine Slack-ID kopieren">
-    Damit dein Agent nur dir antwortet, brauchen wir deine Slack-ID. Das ist nicht dein Name, sondern eine Kennung, die mit `U` beginnt.
+    Damit dein Agent nur dir antwortet, braucht er deine Slack-ID. Das ist nicht dein Name, sondern eine Kennung, die mit `U` beginnt.
 
     Klicke in Slack auf dein Profilbild → **Profil** → auf die drei Punkte **⋮** → **Mitglieds-ID kopieren**.
   </Step>
   <Step title="Channels auswählen (optional)">
-    Soll dein Agent auch in Channels mitarbeiten? Dann brauchen wir die ID jedes Channels.
+    Soll dein Agent auch in Channels mitarbeiten? Klicke mit der rechten Maustaste auf den Channel → **Link kopieren**. Die ID ist das letzte Stück des Links und beginnt mit `C`.
 
-    Klicke mit der rechten Maustaste auf den Channel → **Link kopieren**. Die ID ist das letzte Stück des Links und beginnt mit `C`.
-
-    Lade deinen Agent danach in diesen Channel ein: Schreib dort `/invite @` und den Namen deines Agents.
+    Lade deinen Agent danach in den Channel ein: Schreib dort `/invite @` und seinen Namen.
   </Step>
-  <Step title="Alles an uns schicken">
-    Schick uns in einer Nachricht:
+  <Step title="Alles deinem Agent schicken">
+    Schick deinem Agent in Telegram den App-Token, den Bot-Token, deine Slack-ID und falls gewünscht die Channel-IDs.
 
-    1. den App-Token (`xapp-…`)
-    2. den Bot-Token (`xoxb-…`)
-    3. deine Slack-ID (`U…`)
-    4. falls gewünscht die Channel-IDs (`C…`)
+    Er prüft die Schlüssel direkt bei Slack. Ist etwas falsch kopiert, sagt er dir, welcher Schlüssel und wo du den richtigen findest. Stimmt alles, schaltet er Slack sofort ein.
 
-    Wir prüfen die Schlüssel, schalten Slack für deinen Agent frei und melden uns, sobald alles läuft.
+    <Warning>
+      Mit diesen Schlüsseln kann jemand als dein Agent in Slack schreiben und mitlesen. Schick sie nur deinem Agent und lösch die Nachricht danach aus dem Telegram-Chat. Dein Agent hat sie dann sicher abgelegt.
+    </Warning>
   </Step>
   <Step title="Testen">
-    Sobald wir Bescheid geben: Such deinen Agent in Slack unter **Apps** und schreib ihm eine Direktnachricht. Er antwortet.
+    Dein Agent bittet dich um eine Testnachricht. Such ihn in Slack unter **Apps** und schreib ihm eine Direktnachricht. Kommt seine Antwort in Slack, ist alles eingerichtet.
 
     Im Channel erwähnst du ihn mit `@` und seinem Namen, zum Beispiel `@Mein Agent, fass bitte den Thread zusammen`.
   </Step>
@@ -164,18 +85,21 @@ Die Einrichtung teilt sich auf: Du legst in Slack eine kleine App an und kopiers
   <Accordion title="Warum reagiert er im Channel nicht auf jede Nachricht?">
     Das ist so gewollt. Im Channel antwortet dein Agent nur, wenn du ihn mit `@` erwähnst. Sonst würde jede Nachricht deiner Kolleginnen und Kollegen einen eigenen Auftrag auslösen, und damit Kosten.
   </Accordion>
-  <Accordion title="Ich habe geschrieben, bevor ihr Bescheid gegeben habt. Kommt die Antwort noch?">
-    Nein. Nachrichten, die vor der Freischaltung geschrieben wurden, erreichen deinen Agent nicht. Schick ihm nach unserer Rückmeldung einfach eine neue Nachricht.
+  <Accordion title="Ich habe geschrieben, bevor alles eingerichtet war. Kommt die Antwort noch?">
+    Nein. Nachrichten, die geschrieben wurden, bevor Slack eingeschaltet war, erreichen deinen Agent nicht. Schick ihm einfach eine neue Nachricht.
   </Accordion>
   <Accordion title="Er antwortet im Channel nicht, obwohl ich ihn erwähne">
     Meist fehlt eines von zwei Dingen:
     1. Dein Agent ist nicht im Channel. Lade ihn mit `/invite @` und seinem Namen ein.
-    2. Der Channel ist nicht freigeschaltet. Schick uns die Channel-ID, wir tragen ihn nach.
+    2. Der Channel ist nicht freigeschaltet. Schick deinem Agent die Channel-ID, er trägt ihn nach.
+  </Accordion>
+  <Accordion title="Mein Agent sagt, Slack muss erst freigeschaltet werden">
+    Dann fehlt bei deinem Agent noch ein technischer Baustein, den wir einmalig einspielen. Dein Agent meldet sich, sobald das erledigt ist. Danach kannst du direkt weitermachen.
   </Accordion>
   <Accordion title="Kann ich Telegram dann abschalten?">
     Wir empfehlen, Telegram als zweiten Weg zu behalten. Wenn Slack einmal nicht erreichbar ist, erreichst du deinen Agent trotzdem.
   </Accordion>
   <Accordion title="Schlüssel verloren oder weitergegeben – was tun?">
-    Am sichersten: Öffne [api.slack.com/apps](https://api.slack.com/apps), wähle deine App, gehe auf **Basic Information** und ganz unten auf **Delete App**. Damit sind beide Schlüssel sofort wertlos. Leg die App danach nach dieser Anleitung neu an und schick uns die neuen Schlüssel.
+    Am sichersten: Öffne [api.slack.com/apps](https://api.slack.com/apps), wähle deine App, gehe auf **Basic Information** und ganz unten auf **Delete App**. Damit sind beide Schlüssel sofort wertlos. Sag danach deinem Agent, dass du neue Schlüssel hast. Er führt dich wieder durch.
   </Accordion>
 </AccordionGroup>
