@@ -78,6 +78,12 @@
             "pages": [
               "datenschutz/firmendaten"
             ]
+          },
+          {
+            "group": "Häufige Fragen",
+            "pages": [
+              "faq/haeufige-fragen"
+            ]
           }
         ]
       }
